@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="1Aster_Web_Regression_Test_Suite">
+	<listeners>
+		<listener class-name="com.web.aster.Listeners.TestListener" />
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+	</listeners>
+
+	<test name="TC001_Register_As_New_User_Chrome">
+		<parameter name="browserName" value="chrome" />
+		<parameter name="environment" value="uat" />
+		<classes>
+			<class name="com.web.aster.Tests.TC001_Register_As_New_User" />
+		</classes>
+	</test>
+	
+</suite>
+
+
+<!-- 	<test name="TC001_Register_As_New_User_5554">
+		<parameter name="browserName" value="firefox" />
+		<parameter name="environment" value="qa" />
+		<classes>
+			<class name="com.aster.Tests.TC001_Register_As_New_User" />
+		</classes>
+	</test>
+	
+	<test name="TC001_Register_As_New_User_5554">
+		<parameter name="browserName" value="ie" />
+		<parameter name="environment" value="qa" />
+		<classes>
+			<class name="com.aster.Tests.TC001_Register_As_New_User" />
+		</classes>
+	</test>
+-->
