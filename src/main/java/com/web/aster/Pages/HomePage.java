@@ -13,9 +13,8 @@ public class HomePage extends BaseClass implements Page{
 
 	TestUtils utils = new TestUtils();
 
-	@FindBy(xpath = "//div[@className='label cursor-pointer']") 
-	public WebElement loginRegisterLink;
-
+	@FindBy(xpath = "//div[@class='label cursor-pointer']") 
+	private WebElement loginRegisterLink;
 
 	public HomePage() {
 		PageFactory.initElements(super.getDriver(), this);

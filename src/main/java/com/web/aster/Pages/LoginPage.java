@@ -8,35 +8,37 @@ import com.web.aster.Base.BaseClass;
 import com.web.aster.Interfaces.Page;
 import com.web.aster.Utilities.TestUtils;
 
-
-
 public class LoginPage extends BaseClass implements Page{
 
 	TestUtils utils = new TestUtils();
+	
 
-	@FindBy(xpath = "//*[contains(@text,'Login / Register')]")
-	public WebElement titleText;
+	@FindBy(xpath = "//span[normalize-space()='Welcome !']")
+	private WebElement welcomeText;
 	
-	@FindBy(xpath = "//*[@id=\"kc-page-title\"]/div[2]/div/div/a/text()")
-	public WebElement helpText;
+	@FindBy(xpath = "//a[@class='help']")
+	private WebElement helpText;
 	
-	@FindBy(xpath = "//*[contains(@text,'Please enter your mobile number')]")
-	public WebElement enterMobileNumberText;
+	@FindBy(xpath = "//strong[normalize-space()='Login']")
+	private WebElement enterMobileNumberToLoginText;
 	
-	@FindBy(xpath = "//*[@id=\"countryCode\"]/div/span")
-	public WebElement countryCodeDownArrow;
+	@FindBy(xpath = "//span[@class='dd-pointer dd-pointer-down']")
+	private WebElement countryCodeDownArrow;
 	
 	@FindBy(xpath = "//*[@id=\"countryCode\"]/ul")
-	public WebElement countryCodeListBox;
+	private WebElement countryCodeListBox;
 	
-	@FindBy(id = "user.attributes.mobile_number")
-	public WebElement mobileNumberTextBox;
+	@FindBy(xpath = "//input[@id='user.attributes.mobile_number']")
+	private WebElement mobileNumberTextBox;
 	
-	@FindBy(xpath = "//*[contains(@text,'Continue')]")
-	public WebElement continueButton;
+	@FindBy(xpath = "//div[@class='mdc-card__action-buttons']//button[@id='kc-login']")
+	private WebElement continueButton;
 	
-	@FindBy(xpath = "//*[contains(@text,'Login with Email')]")
-	public WebElement loginWithEmailButton;
+	@FindBy(xpath = "//a[@id='kc-login']")
+	private WebElement iWillDoItLaterLink;
+	
+	@FindBy(xpath = "//div[@class='mdc-card__action-buttons kc-social-links']//button[@id='kc-login']")
+	private WebElement loginWithEmailButton;
 	
 
 	public LoginPage() {
@@ -104,6 +106,28 @@ public class LoginPage extends BaseClass implements Page{
 		}
 	}
 	
+	public boolean clickCountryCodeDownArrow() {
+		if(isUIElementDisplayed(countryCodeDownArrow)) {
+			super.click(countryCodeDownArrow);
+			utils.log().info("Clicked on drop down box on the Login Page");
+			return true;
+		}else {
+			utils.log().info("Drop down box is not displayed on the Login Page");
+			return false;
+		}
+	}
+	
+
+	public boolean isWillDoItLaterLinkDisplayed() {
+		if(isUIElementDisplayed(iWillDoItLaterLink)) {
+			utils.log().info(iWillDoItLaterLink.getText() + " link is displayed on the Login Page");
+			return true;
+		}else {
+			utils.log().info("\"I Will Do it Later\" link is not displayed on the Login Page");
+			return false;
+		}
+	}
+	
 	public boolean clickLoginWithEmail() {
 		if(isUIElementDisplayed(loginWithEmailButton)) {
 			super.click(loginWithEmailButton);
@@ -111,6 +135,17 @@ public class LoginPage extends BaseClass implements Page{
 			return true;
 		}else {
 			utils.log().info("\"Login With Email\" button is not displayed on the Login Page");
+			return false;
+		}
+	}
+	
+	public boolean clickWillDoItLaterLinkDisplayed() {
+		if(isUIElementDisplayed(iWillDoItLaterLink)) {
+			super.click(iWillDoItLaterLink);
+			utils.log().info("Clicked on \"I Will Do it Later\" link on the Login Page");
+			return true;
+		}else {
+			utils.log().info("\"I Will Do it Later\" link is not displayed on the Login Page");
 			return false;
 		}
 	}
@@ -127,6 +162,7 @@ public class LoginPage extends BaseClass implements Page{
 	}
 	
 	public boolean selectItemInList(String countryCode) {
+		click(countryCodeDownArrow);
 		if(isUIElementDisplayed(countryCodeListBox)) {
 			super.selectItemFromList(countryCodeListBox, countryCode);
 			utils.log().info("Selected country code " + countryCode + " on the Login Page");
@@ -137,7 +173,7 @@ public class LoginPage extends BaseClass implements Page{
 		}
 	}
 	
-	public boolean enterMobileNumber(Integer mobileNumber) {
+	public boolean enterMobileNumber(Long mobileNumber) {
 		if(isUIElementDisplayed(mobileNumberTextBox)) {
 			super.typeData(mobileNumberTextBox, mobileNumber.toString());
 			utils.log().info("Entered mobile number " + mobileNumber.toString() + " on the Login Page");
@@ -149,28 +185,28 @@ public class LoginPage extends BaseClass implements Page{
 	}
 	
 	public boolean isTitleMessageDisplayed() {
-		if(isUIElementDisplayed(titleText)) {
-			utils.log().info(titleText.getText() + " title is displayed");
+		if(isUIElementDisplayed(welcomeText)) {
+			utils.log().info(welcomeText.getText() + " title text is displayed");
 			return true;
 		}else {
-			utils.log().info("Login / Register title is not displayed");
+			utils.log().info("Welcome title text is not displayed");
 			return false;
 		}
 	}
 	
 	public boolean isLabelDisplayed() {
-		if(isUIElementDisplayed(enterMobileNumberText)) {
-			utils.log().info(enterMobileNumberText.getText() + " text is displayed");
+		if(isUIElementDisplayed(enterMobileNumberToLoginText)) {
+			utils.log().info(enterMobileNumberToLoginText.getText() + " text is displayed");
 			return true;
 		}else {
-			utils.log().info("Please enter your mobile number text is not displayed");
+			utils.log().info("To Login or Register please enter your mobile number text is not displayed");
 			return false;
 		}
 	}
 	
 	@Override
 	public boolean isAt() {
-		if(isUIElementDisplayed(titleText)) {
+		if(isUIElementDisplayed(welcomeText)) {
 			utils.log().info("On Login / Register Page");
 			return true;
 		} else {

@@ -3,6 +3,7 @@ package com.web.aster.Tests;
 import java.lang.reflect.Method;
 
 import org.testng.AssertJUnit;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -15,15 +16,20 @@ import com.web.aster.Utilities.TestUtils;
 public class TC001_Register_As_New_User extends BaseClass{
 	TestUtils utils;
 	HomePage home;
-	LoginPage login;
+	LoginPage login; 
 	
-	String countryCode;
-	String mobileNumber;
 	
-//	@BeforeMethod
-//	public void beforeMethod(Method m) {
-//		utils.log().info("\n" + "\n" + "****** starting test : " + m.getName() + " ******" + "\n");
-//	}
+	@BeforeClass
+	public void beforeClass() throws Exception {
+		utils = new TestUtils();
+		home = new HomePage();
+		login = new LoginPage();
+	}
+	
+	@BeforeMethod
+	public void beforeMethod(Method m) {
+		utils.log().info("\n" + "\n" + "****** starting test : " + m.getName() + " ******" + "\n");
+	}
 
 	@Test(priority = 1)
 	public void Test_UI_Elements_On_Application_Home_Page() throws InterruptedException {
@@ -32,7 +38,7 @@ public class TC001_Register_As_New_User extends BaseClass{
 		
 		if(home.isAt()) {
 			AssertJUnit.assertTrue(home.isLoginRegisterLinkDisplayed());
-		}	
+		}
 		s1.assertAll();
 	}
 	
@@ -59,7 +65,8 @@ public class TC001_Register_As_New_User extends BaseClass{
 			AssertJUnit.assertTrue(login.isCountryCodeListBoxDisplayed());
 			AssertJUnit.assertTrue(login.isMobileNumberTextBoxDisplayed());
 			AssertJUnit.assertTrue(login.isContinueButtonDisplayed());
-			AssertJUnit.assertTrue(login.isLoginWithEmailButtonDisplayed());
+			AssertJUnit.assertTrue(login.isWillDoItLaterLinkDisplayed());
+//			AssertJUnit.assertTrue(login.isLoginWithEmailButtonDisplayed());
 		}	
 		s3.assertAll();
 	}
@@ -71,7 +78,7 @@ public class TC001_Register_As_New_User extends BaseClass{
 
 		if(login.isAt()) {
 			AssertJUnit.assertTrue(login.selectItemInList(super.getCountryCode()));
-			AssertJUnit.assertTrue(login.enterMobileNumber(super.generateMobileNumber()));
+			AssertJUnit.assertTrue(login.enterMobileNumber(super.generateMobileNumber(super.getCountryCode())));
 			AssertJUnit.assertTrue(login.clickContinue());
 		}
 		s4.assertAll();
