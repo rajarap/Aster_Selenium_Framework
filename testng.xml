@@ -6,7 +6,7 @@
 		<listener class-name="org.uncommons.reportng.HTMLReporter" />
 	</listeners>
 
-	<test name="TC001_Register_As_New_User_Chrome">
+	<test name="TC001_Register_As_New_User_Chrome1">
 		<parameter name="browserName" value="chrome" />
 		<parameter name="environment" value="uat" />
 		<classes>
@@ -14,13 +14,13 @@
 		</classes>
 	</test>
 	
-	<test name="TC001_Register_As_New_User_firefox">
+	<!--*<test name="TC001_Register_As_New_User_Chrome2">
 		<parameter name="browserName" value="firefox" />
-		<parameter name="environment" value="qa" />
+		<parameter name="environment" value="uat" />
 		<classes>
 			<class name="com.web.aster.Tests.TC001_Register_As_New_User" />
 		</classes>
-	</test>
+	</test>-->
 	
 </suite>
 
