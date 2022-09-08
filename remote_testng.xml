@@ -6,26 +6,26 @@
 		<listener class-name="org.uncommons.reportng.HTMLReporter" />
 	</listeners>
 
-	<test name="TC001_Register_As_New_User_Chrome1">
+	<test name="TC001_Register_As_New_User_chrome1">
 		<parameter name="browser" value="chrome" />
-		<parameter name="version" value="null" />
+		<parameter name="version" value="100" />
 		<parameter name="environment" value="uat" />
-		<parameter name="platform" value="null" />
-		<parameter name="executionEnv" value="local" />
+		<parameter name="platform" value="Windows 10" />
+		<parameter name="executionEnv" value="remote" />
 		<classes>
 			<class name="com.web.aster.Tests.TC001_Register_As_New_User" />
 		</classes>
 	</test>
 	
-
-	<test name="TC001_Register_As_New_User_firefox">
-		<parameter name="browser" value="firefox" />
-		<parameter name="version" value="null" />
+	<test name="TC001_Register_As_New_User_chrome2">
+		<parameter name="browser" value="chrome" />
+		<parameter name="version" value="103" />
 		<parameter name="environment" value="uat" />
-		<parameter name="platform" value="null" />
-		<parameter name="executionEnv" value="local" />
+		<parameter name="platform" value="Windows 11" />
+		<parameter name="executionEnv" value="remote" />
 		<classes>
 			<class name="com.web.aster.Tests.TC001_Register_As_New_User" />
 		</classes>
 	</test>
+	
 </suite>

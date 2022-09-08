@@ -3,10 +3,13 @@ package com.web.aster.Base;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.MalformedURLException;
 import java.net.ServerSocket;
 import java.net.URL;
 import java.time.Duration;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Properties;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
@@ -23,6 +26,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.firefox.ProfilesIni;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.ie.InternetExplorerOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -67,9 +72,6 @@ public class BaseClass {
 	public URL url;
 	public int port;
 
-	public String browser;
-	public String env;
-
 	public String plt;
 	public String dvc;
 
@@ -79,65 +81,134 @@ public class BaseClass {
 
 	}
 
-	@Parameters({ "browserName", "environment" })
+	// chrome, 103, uat, Windows 10
+	@Parameters({ "browser", "version", "environment", "platform", "executionEnv" })
 	@BeforeTest
-	public void beforeTest(String browserName, String environment) {
-		this.browser = browserName;
-		this.env = environment;
+	public void beforeTest(String browserName, String version, String environment, String platform, String exeEnv) throws MalformedURLException {
 		
-		this.browser = browserName;
-		this.env = environment;
-
 		setDateTime(utils.dateTime());
 		setConfigProperties();
+		
+		if(exeEnv.equalsIgnoreCase("local")) {
+			if (browserName.equalsIgnoreCase("chrome")) {
+				setBrowserName(browserName);
+				utils.log().info("Setting " + getBrowserName() + " Webdriver capabilities");
+				
+				ChromeOptions opt = new ChromeOptions();
+				opt.addArguments("--start-maximized");
+				opt.addArguments("--ignore-certificate-errors");
+				opt.addArguments("--disable-popup-blocking");
+				opt.addArguments("--deny-permission-prompts");
+				opt.setExperimentalOption("excludeSwitches", new String[] { "enable-automation" });
+				
+				WebDriverManager.chromedriver().setup();
+				driver = new ChromeDriver(opt);
+				setDriver(driver);
+				getDriver().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
+				utils.log().info(getBrowserName() + " WebDriver has been initialized");
+				launchApp(environment);
+			}
 
-		if (this.browser.equalsIgnoreCase("chrome")) {
-			setBrowserName(this.browser);
-			utils.log().info("Setting " + getBrowserName() + " Webdriver capabilities");
-			ChromeOptions opt = new ChromeOptions();
-			opt.addArguments("--start-maximized");
-			opt.addArguments("--ignore-certificate-errors");
-			opt.addArguments("--disable-popup-blocking");
-			opt.setExperimentalOption("excludeSwitches", new String[] { "enable-automation" });
-			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver(opt);
-			setDriver(driver);
-			getDriver().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
-			utils.log().info(getBrowserName() + " WebDriver has been initialized");
-			launchApp(this.env);
+			if (browserName.equalsIgnoreCase("firefox")) {
+				setBrowserName(browserName);
+				utils.log().info("Setting " + getBrowserName() + " Webdriver capabilities");
+				
+				FirefoxOptions ffProfile = new FirefoxOptions();
+				ffProfile.addPreference("geo.enabled", false);
+				
+				WebDriverManager.firefoxdriver().setup();
+				driver = new FirefoxDriver(ffProfile);
+				setDriver(driver);
+				getDriver().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
+				utils.log().info(getBrowserName() + " WebDriver has been initialized");
+				launchApp(environment);
+			}
+
+			if (browserName.equalsIgnoreCase("ie")) {
+				setBrowserName(browserName);
+				utils.log().info("Setting " + getBrowserName() + " Webdriver capabilities");
+				
+				WebDriverManager.iedriver().setup();
+				driver = new InternetExplorerDriver();
+				setDriver(driver);
+				getDriver().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
+				utils.log().info(getBrowserName() + " WebDriver has been initialized");
+				launchApp(environment);
+			}
 		}
+		
+		if(exeEnv.equalsIgnoreCase("remote")) {
+			if (browserName.equalsIgnoreCase("chrome")) {
+				setBrowserName(browserName);
+				
+				ChromeOptions chOpt = new ChromeOptions();
+				chOpt.addArguments("--start-maximized");
+				chOpt.addArguments("--ignore-certificate-errors");
+				chOpt.addArguments("--disable-popup-blocking");
+				chOpt.setExperimentalOption("excludeSwitches", new String[] { "enable-automation" });
+				chOpt.setPlatformName(platform);
+				chOpt.setBrowserVersion(version);
 
-		if (this.browser.equalsIgnoreCase("firefox")) {
-			setBrowserName(this.browser);
-			utils.log().info("Setting " + getBrowserName() + " Webdriver capabilities");
-			WebDriverManager.firefoxdriver().setup();
-			driver = new FirefoxDriver();
-			setDriver(driver);
-			getDriver().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
-			utils.log().info(getBrowserName() + " WebDriver has been initialized");
-			launchApp(this.env);
-		}
+				Map<String, Object> sauceOptions = new HashMap<>();
+				sauceOptions.put("build", "2.1.2-16-UAT");
+				sauceOptions.put("name", "1Aster_UAT_Regression_Test");
+				chOpt.setCapability("sauce:options", sauceOptions);
 
-		if (this.browser.equalsIgnoreCase("ie")) {
-			setBrowserName(this.browser);
-			utils.log().info("Setting " + getBrowserName() + " Webdriver capabilities");
-			WebDriverManager.iedriver().setup();
-			driver = new InternetExplorerDriver();
-			setDriver(driver);
-			getDriver().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
-			utils.log().info(getBrowserName() + " WebDriver has been initialized");
-			launchApp(this.env);
+				String URL = "https://oauth-prabhu.rajarathinam-74cf9" + ":" + getProps().getProperty("accesskey")
+						+ "@ondemand.eu-central-1.saucelabs.com:443/wd/hub";
+				
+				url = new URL(URL);
+				WebDriver driver = new RemoteWebDriver(url, chOpt);
+				setDriver(driver);
+				getDriver().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
+				utils.log().info(getBrowserName() + " WebDriver has been initialized");
+				launchApp(environment);
+			}
+
+			if (browserName.equalsIgnoreCase("firefox")) {
+				setBrowserName(browserName);
+				utils.log().info("Setting " + getBrowserName() + " Webdriver capabilities");
+				
+				FirefoxOptions ffOpts = new FirefoxOptions();
+				ffOpts.addPreference("geo.enabled", false);
+				ffOpts.setPlatformName(platform);
+				ffOpts.setBrowserVersion(version);
+
+				Map<String, Object> sauceOptions = new HashMap<>();
+				sauceOptions.put("build", "2.1.2-16-UAT");
+				sauceOptions.put("name", "1Aster_UAT_Regression_Test");
+				ffOpts.setCapability("sauce:options", sauceOptions);
+
+				String URL = "https://oauth-prabhu.rajarathinam-74cf9" + ":" + getProps().getProperty("accesskey")
+						+ "@ondemand.eu-central-1.saucelabs.com:443/wd/hub";
+				
+				url = new URL(URL);
+				WebDriver driver = new RemoteWebDriver(url, ffOpts);
+				setDriver(driver);
+				getDriver().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
+				utils.log().info(getBrowserName() + " WebDriver has been initialized");
+				launchApp(environment);
+			}
+
+			if (browserName.equalsIgnoreCase("ie")) {
+				setBrowserName(browserName);
+				utils.log().info("Setting " + getBrowserName() + " Webdriver capabilities");
+				
+				WebDriverManager.iedriver().setup();
+				driver = new InternetExplorerDriver();
+				setDriver(driver);
+				getDriver().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
+				utils.log().info(getBrowserName() + " WebDriver has been initialized");
+				launchApp(environment);
+			}		
 		}
 	}
-	
 
 
 	@AfterTest
 	public void afterTest() {
 		utils.log().info("Closing App...");
 		closeApp();
-		utils.log().info("Quitting Driver...");
-		getDriver().quit();
 	}
 
 	public void closeApp() {
@@ -199,14 +270,6 @@ public class BaseClass {
 		webDriver.set(driver);
 	}
 
-	public RemoteWebDriver getRemoteWebDriver() {
-		return remoteWebDriver.get();
-	}
-
-	public void setRemoteWebDriver(RemoteWebDriver driver) {
-		remoteWebDriver.set((RemoteWebDriver) driver);
-	}
-
 	public Properties getProperties() {
 		return props.get();
 	}
@@ -242,7 +305,8 @@ public class BaseClass {
 	@AfterSuite
 	public void afterSuite() {
 		utils.log().info("Execution Done....");
-
+		utils.log().info("Quitting Driver...");
+		getDriver().quit();
 	}
 
 	public void waitForVisibility(WebElement e) {
@@ -279,8 +343,8 @@ public class BaseClass {
 	public void selectItemFromList(WebElement countryCodeListBox, String countryCode) {
 		List<WebElement> options = countryCodeListBox.findElements(By.tagName("li"));
 		utils.log().info("Total Number of items availabe in dropdown box is : " + options.size() + " options");
-		
-		for(WebElement item : options) {
+
+		for (WebElement item : options) {
 			if (item.getText().equals(countryCode)) {
 				click(item);
 				break;
@@ -289,72 +353,26 @@ public class BaseClass {
 
 	}
 
-	public long generateMobileNumber(String countryCode) {
+	public synchronized long generateMobileNumber(String countryCode) {
 		Random random = new Random();
-		long number=0;
-		
-		if(countryCode.equals("+971")) {
+		long number = 0;
+
+		if (countryCode.equals("+971")) {
 			number = random.nextInt(999999999);
-		if(countryCode.equals("+91")) {
-			number = (long) Math.floor(Math.random() * 9_000_000_000L) + 1_000_000_000L;
-			}
+//		if(countryCode.equals("+91")) {
+//			number = (long) Math.floor(Math.random() * 9_000_000_000L) + 1_000_000_000L;
+//			}
 		}
 		return number;
 	}
 
 	public String getCountryCode() {
-		String[] ccode = {"+971", "+91"};
+//		String[] ccode = {"+971", "+91"};
+		String[] ccode = { "+971" };
 		int index = new Random().nextInt(ccode.length);
-	    return ccode[index];
+		return ccode[index];
 	}
 }
-
-
-
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //@SuppressWarnings("deprecation")
 //@Parameters({ "browserName", "environment" })
