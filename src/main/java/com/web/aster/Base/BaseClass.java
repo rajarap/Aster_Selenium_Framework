@@ -12,8 +12,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 import java.util.Random;
+
+import javax.mail.MessagingException;
+
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -26,11 +32,14 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
+import org.testng.ITestResult;
+import org.testng.Reporter;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 
+import com.web.aster.Utilities.EmailConfig;
 import com.web.aster.Utilities.TestUtils;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -39,6 +48,7 @@ public class BaseClass {
 
 	public Properties properties = new Properties();
 	TestUtils utils = new TestUtils();
+	EmailConfig emailConfig = new EmailConfig();
 
 	protected static ThreadLocal<WebDriver> webDriver = new ThreadLocal<WebDriver>();
 	protected static ThreadLocal<RemoteWebDriver> remoteWebDriver = new ThreadLocal<RemoteWebDriver>();
@@ -218,24 +228,24 @@ public class BaseClass {
 		}
 	}
 
-//	public void takeScreenshot(String methodName, ITestResult result) {
-//		System.setProperty("org.uncommons.reportng.escape-output", "false");
-//		String ssPath = "Screenshots" + File.separator + getBrowserName() + File.separator + utils.onlyDate();
-//		ssFile = new File(ssPath);
-//		if (!ssFile.exists()) {
-//			ssFile.mkdirs();
-//		}
-//		File file = ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.FILE);
-//		try {
-//			FileUtils.copyFile(file, new File(ssFile.getAbsolutePath() + File.separator
-//					+ result.getTestClass().getRealClass().getSimpleName() + File.separator + methodName + ".jpg"));
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
-//		Reporter.log("<a href = " + ssFile.getAbsolutePath() + File.separator
-//				+ result.getTestClass().getRealClass().getSimpleName() + File.separator + methodName + ".jpg"
-//				+ ">screenshot</a>");
-//	}
+	public void takeScreenshot(String methodName, ITestResult result) {
+		System.setProperty("org.uncommons.reportng.escape-output", "false");
+		String ssPath = "Screenshots" + File.separator + getBrowserName() + File.separator + utils.onlyDate();
+		ssFile = new File(ssPath);
+		if (!ssFile.exists()) {
+			ssFile.mkdirs();
+		}
+		File file = ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.FILE);
+		try {
+			FileUtils.copyFile(file, new File(ssFile.getAbsolutePath() + File.separator
+					+ result.getTestClass().getRealClass().getSimpleName() + File.separator + methodName + ".jpg"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		Reporter.log("<a href = " + ssFile.getAbsolutePath() + File.separator
+				+ result.getTestClass().getRealClass().getSimpleName() + File.separator + methodName + ".jpg"
+				+ ">screenshot</a>");
+	}
 
 	public void setConfigProperties() {
 		String propFileName = "config.properties";
@@ -289,7 +299,7 @@ public class BaseClass {
 	}
 
 	@AfterSuite
-	public void afterSuite() {
+	public void afterSuite() throws MessagingException {
 		utils.log().info("Execution Done....");
 		utils.log().info("Quitting Driver...");
 		getDriver().quit();
