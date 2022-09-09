@@ -12,36 +12,22 @@ import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 import java.util.Random;
-import java.util.concurrent.TimeUnit;
-
-import org.apache.commons.io.FileUtils;
-import org.apache.logging.log4j.ThreadContext;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.firefox.FirefoxProfile;
-import org.openqa.selenium.firefox.ProfilesIni;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.ie.InternetExplorerOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
-import org.testng.ITestResult;
-import org.testng.Reporter;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 
@@ -232,24 +218,24 @@ public class BaseClass {
 		}
 	}
 
-	public void takeScreenshot(String methodName, ITestResult result) {
-		System.setProperty("org.uncommons.reportng.escape-output", "false");
-		String ssPath = "Screenshots" + File.separator + getBrowserName() + File.separator + utils.onlyDate();
-		ssFile = new File(ssPath);
-		if (!ssFile.exists()) {
-			ssFile.mkdirs();
-		}
-		File file = ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.FILE);
-		try {
-			FileUtils.copyFile(file, new File(ssFile.getAbsolutePath() + File.separator
-					+ result.getTestClass().getRealClass().getSimpleName() + File.separator + methodName + ".jpg"));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		Reporter.log("<a href = " + ssFile.getAbsolutePath() + File.separator
-				+ result.getTestClass().getRealClass().getSimpleName() + File.separator + methodName + ".jpg"
-				+ ">screenshot</a>");
-	}
+//	public void takeScreenshot(String methodName, ITestResult result) {
+//		System.setProperty("org.uncommons.reportng.escape-output", "false");
+//		String ssPath = "Screenshots" + File.separator + getBrowserName() + File.separator + utils.onlyDate();
+//		ssFile = new File(ssPath);
+//		if (!ssFile.exists()) {
+//			ssFile.mkdirs();
+//		}
+//		File file = ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.FILE);
+//		try {
+//			FileUtils.copyFile(file, new File(ssFile.getAbsolutePath() + File.separator
+//					+ result.getTestClass().getRealClass().getSimpleName() + File.separator + methodName + ".jpg"));
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
+//		Reporter.log("<a href = " + ssFile.getAbsolutePath() + File.separator
+//				+ result.getTestClass().getRealClass().getSimpleName() + File.separator + methodName + ".jpg"
+//				+ ">screenshot</a>");
+//	}
 
 	public void setConfigProperties() {
 		String propFileName = "config.properties";
@@ -373,156 +359,3 @@ public class BaseClass {
 		return ccode[index];
 	}
 }
-
-//@SuppressWarnings("deprecation")
-//@Parameters({ "browserName", "environment" })
-//@BeforeTest
-//public void beforeTest(String browserName, String environment) {
-//	this.browser = browserName;
-//	this.env = environment;
-//
-//	try {
-//		setDateTime(utils.dateTime());
-//		setConfigProperties();
-//
-//		switch (this.browser) {
-//		case "chrome":
-//			setBrowserName(this.browser);
-//			utils.log().info("Setting " + getBrowserName() + " Webdriver capabilities");
-//			ChromeOptions opt = new ChromeOptions();
-//			opt.addArguments("--start-maximized");
-//			opt.addArguments("--ignore-certificate-errors");
-//			opt.addArguments("--disable-popup-blocking");
-//			opt.setExperimentalOption("excludeSwitches", new String[] { "enable-automation" });
-//			WebDriverManager.chromedriver().setup();
-//			driver = new ChromeDriver(opt);
-//			setDriver(driver);
-//			getDriver().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
-//			utils.log().info(getBrowserName() + " WebDriver has been initialized");
-//			launchApp(this.env);
-//			break;
-//		case "firefox":
-//			setBrowserName(this.browser);
-//			utils.log().info("Setting " + getBrowserName() + " Webdriver capabilities");
-//			WebDriverManager.firefoxdriver().setup();
-//			driver = new FirefoxDriver();
-//			setDriver(driver);
-//			// getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-//			getDriver().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
-//			utils.log().info(getBrowserName() + " WebDriver has been initialized");
-//			launchApp(this.env);
-//			break;
-//		case "ie":
-//			setBrowserName(this.browser);
-//			utils.log().info("Setting " + getBrowserName() + " Webdriver capabilities");
-//			WebDriverManager.iedriver().setup();
-//			driver = new InternetExplorerDriver();
-//			setDriver(driver);
-//			// getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-//			getDriver().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
-//			utils.log().info(getBrowserName() + " WebDriver has been initialized");
-//			launchApp(this.env);
-//			break;
-//		default:
-//			// utils.log().info("Please mention platform name to execute your automation
-//			// scripts!!!! ");
-//		}
-//	} catch (Exception e) {
-//		utils.log().fatal(
-//				"Unable to initialize Webdriver for " + getBrowserName() + "...... ABORTING !!!\n" + e.toString());
-//	}
-//}
-
-//@SuppressWarnings("deprecation")
-//@Parameters({ "browserName", "environment", "host", "portNo" })
-//@BeforeTest
-//public void beforeTest(String browserName, String environment, String host, String portNo) {
-//	this.browser = browserName;
-//	this.env = environment;
-//	this.host = host;
-//	this.portNo = portNo;
-//
-//	try {
-//		setDateTime(utils.dateTime());
-//		setConfigProperties();
-//
-//		if (this.browser != null && this.env != null && this.host != null && this.portNo != null) {
-//			switch (this.browser) {
-//			case "chrome":
-//				setBrowserName(this.browser);
-//				utils.log().info("Setting " + getBrowserName() + " Webdriver capabilities");
-//				ChromeOptions chormeOptions = new ChromeOptions();
-//				chormeOptions.addArguments("--start-maximized");
-//				chormeOptions.addArguments("--ignore-certificate-errors");
-//				chormeOptions.addArguments("--disable-popup-blocking");
-//				chormeOptions.addArguments("--incognito");
-//
-//				hub_url = "http://" + this.host + ":" + this.portNo + "/wd/hub";
-//
-//				remoteDriver = new RemoteWebDriver(new URL(hub_url), chormeOptions);
-//				setRemoteWebDriver(remoteDriver);
-//				getRemoteWebDriver().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
-//				utils.log().info(getBrowserName() + " RemoteWebDriver has been initialized");
-//				launchApp(this.env);
-//				break;
-//			case "firefox":
-//				setBrowserName(this.browser);
-//				utils.log().info("Setting " + getBrowserName() + " Webdriver capabilities");
-//				FirefoxOptions firefoxOptions = new FirefoxOptions();
-//				firefoxOptions.addArguments("--start-maximized");
-//				firefoxOptions.addArguments("--ignore-certificate-errors");
-//				firefoxOptions.addArguments("--disable-popup-blocking");
-//				firefoxOptions.addArguments("--incognito");
-//
-//				hub_url = "http://" + this.host + ":" + this.portNo + "/wd/hub";
-//				remoteDriver = new RemoteWebDriver(new URL(hub_url), firefoxOptions);
-//				setRemoteWebDriver(remoteDriver);
-//				getRemoteWebDriver().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
-//				utils.log().info(getBrowserName() + " RemoteWebDriver has been initialized");
-//				launchApp(this.env);
-//				break;
-//			case "ie":
-//				setBrowserName(this.browser);
-//				utils.log().info("Setting " + getBrowserName() + " Webdriver capabilities");
-//				InternetExplorerOptions ieOptions = new InternetExplorerOptions();
-//				ieOptions.introduceFlakinessByIgnoringSecurityDomains();
-//				ieOptions.ignoreZoomSettings();
-//				ieOptions.destructivelyEnsureCleanSession();
-//
-//				hub_url = "http://" + this.host + ":" + this.portNo + "/wd/hub";
-//				remoteDriver = new RemoteWebDriver(new URL(hub_url), ieOptions);
-//				setRemoteWebDriver(remoteDriver);
-//				getRemoteWebDriver().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
-//				utils.log().info(getBrowserName() + " RemoteWebDriver has been initialized");
-//				launchApp(this.env);
-//				break;
-//			default:
-//				// utils.log().info("Please mention platform name to execute your automation
-//				// scripts!!!! ");
-//			}
-//		} else {
-//			// default
-//			this.browser = "chrome";
-//			this.env = "uat";
-//			this.host = "localhost";
-//			this.portNo = "8090";
-//
-//			setBrowserName(this.browser);
-//			ChromeOptions chOptions = new ChromeOptions();
-//			chOptions.addArguments("--start-maximized");
-//			chOptions.addArguments("--ignore-certificate-errors");
-//			chOptions.addArguments("--disable-popup-blocking");
-//			chOptions.addArguments("--incognito");
-//
-//			hub_url = "http://" + this.host + ":" + this.portNo + "/wd/hub";
-//
-//			remoteDriver = new RemoteWebDriver(new URL(hub_url), chOptions);
-//			setRemoteWebDriver(remoteDriver);
-//			getRemoteWebDriver().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
-//			utils.log().info(getBrowserName() + " RemoteWebDriver has been initialized");
-//			launchApp(this.env);
-//		}
-//
-//	} catch (Exception e) {utils.log().fatal("Unable to initialize RemoteWebdriver for " + getBrowserName() + "...... ABORTING !!!\n" + e.toString());
-//	}
-//}
