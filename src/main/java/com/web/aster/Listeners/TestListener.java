@@ -26,13 +26,13 @@ public class TestListener implements ITestListener{
 	}
 
 	public void onTestFailure(ITestResult result) {
-		base.takeScreenshot(result.getName(), result);
-		if(result.getThrowable() != null) {
-			  StringWriter sw = new StringWriter();
-			  PrintWriter pw = new PrintWriter(sw);
-			  result.getThrowable().printStackTrace(pw);
-			  utils.log().error(sw.toString());	
-		}
+//		base.takeScreenshot(result.getName(), result);
+//		if(result.getThrowable() != null) {
+//			  StringWriter sw = new StringWriter();
+//			  PrintWriter pw = new PrintWriter(sw);
+//			  result.getThrowable().printStackTrace(pw);
+//			  utils.log().error(sw.toString());	
+//		}
 	}
 
 	public void onTestSkipped(ITestResult result) {
