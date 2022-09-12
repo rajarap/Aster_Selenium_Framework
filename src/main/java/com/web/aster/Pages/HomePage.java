@@ -1,5 +1,6 @@
 package com.web.aster.Pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -15,7 +16,16 @@ public class HomePage extends BaseClass implements Page{
 
 	@FindBy(xpath = "//div[@class='label cursor-pointer']") 
 	private WebElement loginRegisterLink;
-
+	
+	//@FindBy(xpath = "//button[@text='%s']") 
+	//private WebElement verifybuton;
+	
+	@FindBy(xpath = "//h2[@text='%s']") 
+	private WebElement verifylabel;
+	
+	
+	
+	
 	public HomePage() {
 		PageFactory.initElements(super.getDriver(), this);
 	}
@@ -123,4 +133,40 @@ public class HomePage extends BaseClass implements Page{
 			return false;
 		}
 	}
+	//Verify Home page button elements are displaying
+	
+	public boolean isButtonDisplayed(String buttonname)
+	{
+	
+		WebElement button= driver.findElement(By.xpath("//button[text()='"+buttonname+"']"));
+		if(isUIElementDisplayed(button)) {
+		
+			utils.log().info( buttonname+"is displayed");
+			return true;
+		} else
+		{
+			utils.log().info( buttonname+"is not displayed");
+			return false;
+		}
+		
+
+	}
+	public boolean islabelDisplayed(String labelname)
+	{
+		
+		WebElement label= driver.findElement(By.xpath("//h2[text()='"+labelname+"']"));
+		if(isUIElementDisplayed(label)) {
+		
+			utils.log().info( labelname+"is displayed");
+			return true;
+		} else
+		{
+			utils.log().info( labelname+"is not displayed");
+			return false;
+		}
+		
+
+	}
+	
+	
 }
