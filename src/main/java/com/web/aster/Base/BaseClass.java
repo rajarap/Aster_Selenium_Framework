@@ -31,6 +31,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
 import org.testng.ITestResult;
 import org.testng.Reporter;
@@ -40,6 +41,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 
 import com.web.aster.Utilities.EmailConfig;
+import com.web.aster.Utilities.ScrollAction;
 import com.web.aster.Utilities.TestUtils;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -84,6 +86,7 @@ public class BaseClass {
 		
 		setDateTime(utils.dateTime());
 		setConfigProperties();
+		setBrowserName(browserName);
 		
 		if(exeEnv.equalsIgnoreCase("local")) {
 			if (browserName.equalsIgnoreCase("chrome")) {
@@ -96,6 +99,12 @@ public class BaseClass {
 				opt.addArguments("--disable-popup-blocking");
 				opt.addArguments("--deny-permission-prompts");
 				opt.setExperimentalOption("excludeSwitches", new String[] { "enable-automation" });
+				
+				Map<String, Object> prefs = new HashMap<String, Object>();
+				prefs.put("credentials_enable_service", false);
+				prefs.put("profile.password_manager_enabled", false);
+
+				opt.setExperimentalOption("prefs", prefs);
 				
 				WebDriverManager.chromedriver().setup();
 				driver = new ChromeDriver(opt);
@@ -111,6 +120,7 @@ public class BaseClass {
 				
 				FirefoxOptions ffProfile = new FirefoxOptions();
 				ffProfile.addPreference("geo.enabled", false);
+				ffProfile.addPreference("signon.rememberSignons", false);
 				
 				WebDriverManager.firefoxdriver().setup();
 				driver = new FirefoxDriver(ffProfile);
@@ -150,7 +160,7 @@ public class BaseClass {
 				sauceOptions.put("name", "1Aster_UAT_Regression_Test");
 				chOpt.setCapability("sauce:options", sauceOptions);
 
-				String URL = "https://oauth-prabhu.rajarathinam-74cf9" + ":" + getProps().getProperty("accesskey")
+				String URL = "https://"+getProps().getProperty("username")+ ":" + getProps().getProperty("accesskey")
 						+ "@ondemand.eu-central-1.saucelabs.com:443/wd/hub";
 				
 				url = new URL(URL);
@@ -226,6 +236,11 @@ public class BaseClass {
 			getDriver().get(getProps().getProperty("prodURL"));
 			utils.log().info("Launching 1Aster - PROD Environemnt");
 		}
+		
+		if (env.equalsIgnoreCase("pre-prod")) {
+			getDriver().get(getProps().getProperty("preProdURL"));
+			utils.log().info("Launching myAster - PRE-PROD Environemnt");
+		}
 	}
 
 	public void takeScreenshot(String methodName, ITestResult result) {
@@ -256,6 +271,17 @@ public class BaseClass {
 			e.printStackTrace();
 		}
 		setProps(properties);
+	}
+	
+	public void loadTestData(String filePath) {
+		try {
+			String dataFilename = filePath;
+			utils.log().info("loading..." + dataFilename);
+			testData = getClass().getClassLoader().getResourceAsStream(dataFilename);
+			properties.load(testData);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	public WebDriver getDriver() {
@@ -302,7 +328,7 @@ public class BaseClass {
 	public void afterSuite() throws MessagingException {
 		utils.log().info("Execution Done....");
 		utils.log().info("Quitting Driver...");
-		getDriver().quit();
+		driver.quit();
 	}
 
 	public void waitForVisibility(WebElement e) {
@@ -349,23 +375,90 @@ public class BaseClass {
 
 	}
 
-	public synchronized long generateMobileNumber(String countryCode) {
+	public synchronized String getMobileNumber(String countryCode) {
 		Random random = new Random();
-		long number = 0;
+		Integer number = 0;
+		String mobNo = "";
 
 		if (countryCode.equals("+971")) {
-			number = random.nextInt(999999999);
-//		if(countryCode.equals("+91")) {
-//			number = (long) Math.floor(Math.random() * 9_000_000_000L) + 1_000_000_000L;
-//			}
+			number = random.nextInt(9999999);
+			if(number.toString().length() == 7) {
+				mobNo = "55" + number.toString();
+			}else {
+				getMobileNumber("+971");
+			}
 		}
-		return number;
+		
+		if (countryCode.equals("+91")) {
+			number = random.nextInt(9999999);
+			if(number.toString().length() == 7) {
+				mobNo = "998" + number.toString();
+			}else {
+				getMobileNumber("+91");
+			}
+		}
+
+		return mobNo;
 	}
 
 	public String getCountryCode() {
-//		String[] ccode = {"+971", "+91"};
-		String[] ccode = { "+971" };
+		String[] ccode = {"+971", "+91"};
+//		String[] ccode = { "+971" };
 		int index = new Random().nextInt(ccode.length);
 		return ccode[index];
 	}
+	
+	public String getCountryName() {
+//     	String[] arr={"India", "Australia"};
+      	String[] arr={"India"};
+      	Random r=new Random();        
+      	int randomNumber=r.nextInt(arr.length);
+      	return(arr[randomNumber]);
+	}
+	
+	public String getFirstName() {
+		Random random = new Random();
+		Integer number = random.nextInt(9999);
+		String fname = "first" + number.toString();
+		return fname;
+	}
+	
+	public String getLastName() {
+		Random random = new Random();
+		Integer number = random.nextInt(9999);
+		String fname = "last" + number.toString();
+		return fname;
+	}
+	
+	//nationality on registration page for Native
+	public void selectOptionFromList(WebElement e, String value) {
+		Select s = new Select(e);
+		List<WebElement>options = s.getOptions();
+		utils.log().info("Total Number of items availabe in dropdown box is : " + options.size());
+		
+		for (int i = 0; i < options.size(); i++) {
+			WebElement item = (WebElement) options.get(i);
+			if (item.getText().equals(value)) {
+				click(item);
+				break;
+			}
+		}
+	}
+	
+	public void scrollUp(){
+		 new ScrollAction().scrollUp();
+	}
+	 
+	public void scrollDown(){
+		 new ScrollAction().scrollDown();
+	}
+	
+	public void scrollToElement(WebElement e){
+		 new ScrollAction().ScrollTillElementVisible(e);
+	}
+
+	public void scrollToBottom() {
+		 new ScrollAction().ScrollToBottom();
+	}
+	
 }

@@ -37,7 +37,7 @@ public class LoginPage extends BaseClass implements Page{
 	@FindBy(xpath = "//a[@id='kc-login']")
 	private WebElement iWillDoItLaterLink;
 	
-	@FindBy(xpath = "//div[@class='mdc-card__action-buttons kc-social-links']//button[@id='kc-login']")
+	@FindBy(xpath = "//div[@class='list-group-item list-view-pf-stacked']//button[@id='kc-login']")
 	private WebElement loginWithEmailButton;
 	
 
@@ -173,10 +173,10 @@ public class LoginPage extends BaseClass implements Page{
 		}
 	}
 	
-	public boolean enterMobileNumber(Long mobileNumber) {
+	public boolean enterMobileNumber(String mobileNumber) {
 		if(isUIElementDisplayed(mobileNumberTextBox)) {
-			super.typeData(mobileNumberTextBox, mobileNumber.toString());
-			utils.log().info("Entered mobile number " + mobileNumber.toString() + " on the Login Page");
+			super.typeData(mobileNumberTextBox, mobileNumber);
+			utils.log().info("Entered mobile number " + mobileNumber + " on the Login Page");
 			return true;
 		}else {
 			utils.log().info("Mobile Number text box is not displayed on the Login Page");

@@ -1,6 +1,5 @@
 package com.web.aster.Pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -16,16 +15,7 @@ public class HomePage extends BaseClass implements Page{
 
 	@FindBy(xpath = "//div[@class='label cursor-pointer']") 
 	private WebElement loginRegisterLink;
-	
-	//@FindBy(xpath = "//button[@text='%s']") 
-	//private WebElement verifybuton;
-	
-	@FindBy(xpath = "//h2[@text='%s']") 
-	private WebElement verifylabel;
-	
-	
-	
-	
+
 	public HomePage() {
 		PageFactory.initElements(super.getDriver(), this);
 	}
@@ -50,78 +40,6 @@ public class HomePage extends BaseClass implements Page{
 		return false;
 	}
 }
-	
-//	public boolean clickOnlyThisTime() {
-//		if(isUIElementDisplayed(onlyThisTime)) {
-//			super.click(onlyThisTime);
-//			utils.log().info("Clicked on \"Only This time\" option on the Application Launch Page");
-//			return true;
-//		}else {
-//			utils.log().info("\"Only This time\" option is not displayed on the Application Launch Page");
-//			return false;
-//		}
-//	}
-//	
-//	public boolean clickDontAllow() {
-//		if(isUIElementDisplayed(dontAllow)) {
-//			super.click(dontAllow);
-//			utils.log().info("Clicked on \"Don't Allow\" option on the Application Launch Page");
-//			return true;
-//		}else {
-//			utils.log().info("\"Don't Allow\" option is not displayed on the Application Launch Page");
-//			return false;
-//		}
-//	}
-//	
-//	public boolean isWhileUsingThisAppButtonDisplayed() {
-//		if(super.isUIElementDisplayed(whileUsingThisApp)) {
-//			utils.log().info(whileUsingThisApp.getText() + " button is displayed on the Application Launch Page");
-//			return true;
-//		}else {
-//			utils.log().info("\"While Using This App\" button is not displayed on the Application Launch Page");
-//			return false;
-//		}
-//	}
-//	
-//	public boolean isOnlyThisTimepButtonDisplayed() {
-//		if(super.isUIElementDisplayed(onlyThisTime)) {
-//			utils.log().info(onlyThisTime.getText() + " button is displayed on the Application Launch Page");
-//			return true;
-//		}else {
-//			utils.log().info("\"Only This Time\" button is not displayed on the Application Launch Page");
-//			return false;
-//		}
-//	}
-//	
-//	public boolean isDontAllowButtonDisplayed() {
-//		if(super.isUIElementDisplayed(dontAllow)) {
-//			utils.log().info(dontAllow.getText() + " button is displayed on the Application Launch Page");
-//			return true;
-//		}else {
-//			utils.log().info("\"Don't Allow\" button is not displayed on the Application Launch Page");
-//			return false;
-//		}
-//	}
-//	
-//	public boolean isLabelDisplayed() {
-//		if(super.isUIElementDisplayed(permissionText)) {
-//			utils.log().info(permissionText.getText() + "label is displayed on the Application Launch Page");
-//			return true;
-//		}else {
-//			utils.log().info("Access to Device Location Message is not displayed on the Application Launch Page");
-//			return false;
-//		}
-//	}
-//	
-//	public boolean isImageDisplayed() {
-//		if(super.isUIElementDisplayed(permissionIcon)) {
-//			utils.log().info("Location image is displayed on the Application Launch Page");
-//			return true;
-//		}else {
-//			utils.log().info("Location image is not displayed on the Application Launch Page");
-//			return false;
-//		}
-//	}
 
 	@Override
 	public boolean isAt() {
@@ -133,40 +51,4 @@ public class HomePage extends BaseClass implements Page{
 			return false;
 		}
 	}
-	//Verify Home page button elements are displaying
-	
-	public boolean isButtonDisplayed(String buttonname)
-	{
-	
-		WebElement button= driver.findElement(By.xpath("//button[text()='"+buttonname+"']"));
-		if(isUIElementDisplayed(button)) {
-		
-			utils.log().info( buttonname+"is displayed");
-			return true;
-		} else
-		{
-			utils.log().info( buttonname+"is not displayed");
-			return false;
-		}
-		
-
-	}
-	public boolean islabelDisplayed(String labelname)
-	{
-		
-		WebElement label= driver.findElement(By.xpath("//h2[text()='"+labelname+"']"));
-		if(isUIElementDisplayed(label)) {
-		
-			utils.log().info( labelname+"is displayed");
-			return true;
-		} else
-		{
-			utils.log().info( labelname+"is not displayed");
-			return false;
-		}
-		
-
-	}
-	
-	
 }
