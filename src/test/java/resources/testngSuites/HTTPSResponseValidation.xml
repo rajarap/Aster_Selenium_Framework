@@ -1,0 +1,25 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Https Response Validation - User" parallel = "tests">
+    <listeners>
+        <listener class-name="testUtils.ListenersUtil"></listener>
+    </listeners>
+    <parameter name="pipeline" value="true"></parameter>
+    <parameter name="testUser" value="PIPELINE"></parameter>
+    <test name="Smoke Login Page">
+        <classes>
+            <class name="productionSmoke.GetResponseValues">
+                <methods>
+                	
+                   		
+                     	
+                          <include name="Verifyresponsecode"/>
+                    
+                    
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+</suite>

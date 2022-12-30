@@ -1,0 +1,42 @@
+name: $(SemVersion).$(build.buildid) #1.0$(Rev:.r)
+
+trigger:
+  branches:
+        include:
+        - master
+  paths:
+    include:
+      - qa/ASTT_WEB_Automation/*
+
+pr:
+  branches:
+    include: [master] # branch names which will trigger a build
+
+resources:
+  repositories:
+  - repository: AgentStateTrackerTool
+    type: git
+    name: qa/ASTT_WEB_Automation
+    ref: master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+stages:
+    - stage: RunSmokeTestOnDev
+      displayName: Run Smoke Test On Dev
+
+      jobs:
+          parameters:
+            env: 'DEV'
+            testFile: 'smoke-all.xml'
+            testRepo: 'AgentStateTrackerTool'
+
+    - stage: RunFunctionalTestOnQA
+      displayName: Run Functional Test On QA
+
+      jobs:
+          parameters:
+            env: 'QA'
+            testFile: 'functional-all.xml'
+            testRepo: 'AgentStateTrackerTool'
