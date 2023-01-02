@@ -8,9 +8,18 @@
   </listeners>
   <test thread-count="5" parallel="tests" name="Smoke Login Page(failed)">
     <classes>
+      <class name="productionSmoke.ProductionHomePageGuestUserSmokeSuite">
+        <methods>
+          <include name="getPingIdToken"/>
+          <include name="getResult"/>
+          <include name="VerifyAddandRemoveProducttoCart" invocation-numbers="0"/>
+          <include name="tearDown"/>
+          <include name="setupTest"/>
+        </methods>
+      </class> <!-- productionSmoke.ProductionHomePageGuestUserSmokeSuite -->
       <class name="productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite">
         <methods>
-          <include name="VerifyAddandRemoveProducttoCart" invocation-numbers="1"/>
+          <include name="VerifyAddandRemoveProducttoCart" invocation-numbers="1 2"/>
           <include name="getPingIdToken"/>
           <include name="setupTest"/>
           <include name="tearDown"/>

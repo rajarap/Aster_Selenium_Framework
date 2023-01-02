@@ -9,7 +9,9 @@
     <parameter name="testUser" value="PIPELINE"></parameter>
     <test name="Smoke Login Page">
         <classes>
-            <class name="productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite">
+            <class name="productionSmoke.ProductionHomePageGuestUserSmokeSuite">
+               </class>
+                  <class name="productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite">
                </class>
         </classes>
     </test>

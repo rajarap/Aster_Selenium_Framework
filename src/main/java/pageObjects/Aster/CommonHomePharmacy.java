@@ -95,7 +95,20 @@ public class CommonHomePharmacy {
 	@FindBy(xpath="//p[text()='Your Cart is Empty']")
 	private WebElement cartempty;
 	
+	@FindBy(xpath="//span[text()='Cash/Card on Delivery']/following::input[@type='radio'][1]")
+	private WebElement cashorcardondeliveryradiobutton;
 	
+	@FindBy(xpath="//div[@class='value']")
+	private WebElement totalvalue;
+	
+	@FindBy(xpath="//div[@class='final-price']")
+	private WebElement tobepaid;
+	
+	@FindBy(xpath="//div[@class='earned-points']")
+	private WebElement securepoints;
+	
+	@FindBy(xpath="//button[text()='Pay']")
+	private WebElement payproceedbutton;
 	
 	
 	public CommonHomePharmacy(WebDriver driver) {
@@ -488,4 +501,48 @@ public class CommonHomePharmacy {
 			return false;
 		}
 	}
+	public void clickOnCashorCardonDeliveryRadioButton() throws InterruptedException
+	{
+		Thread.sleep(6000);
+		WaitUtils.waitForDocumentReadyState(driver);
+		WaitUtils.isElementDisplayed(cashorcardondeliveryradiobutton, driver);
+		WebElementUtils.mouseClick(cashorcardondeliveryradiobutton, driver);
+	}
+	
+	public String verifyTotalValueOfProduct() throws InterruptedException
+	{
+		Thread.sleep(6000);
+		WaitUtils.waitForDocumentReadyState(driver);
+		WaitUtils.isElementDisplayed(totalvalue, driver);
+		String totalproductvalue = totalvalue.getText();
+		return totalproductvalue;
+	}
+	
+	public String verifyToBePaid() throws InterruptedException
+	{
+		Thread.sleep(6000);
+		WaitUtils.waitForDocumentReadyState(driver);
+		WaitUtils.isElementDisplayed(tobepaid, driver);
+		String tobepaidvalue = tobepaid.getText();
+		return tobepaidvalue;
+	}
+	
+	
+	public String verifySecurePoints() throws InterruptedException
+	{
+		Thread.sleep(6000);
+		WaitUtils.waitForDocumentReadyState(driver);
+		WaitUtils.isElementDisplayed(securepoints, driver);
+		String totalsecurepoints = securepoints.getText();
+		return totalsecurepoints;
+	}
+	
+	public void clickOnPayorProceedButton() throws InterruptedException
+	{
+		Thread.sleep(6000);
+		WaitUtils.waitForDocumentReadyState(driver);
+		WaitUtils.isElementDisplayed(payproceedbutton, driver);
+		WebElementUtils.mouseClick(payproceedbutton, driver);
+	}
+	
 }

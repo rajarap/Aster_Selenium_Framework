@@ -52,6 +52,11 @@ public class ProductionPharmacyPageGuestUserSmokeSuite extends BaseTestUser {
 		cmndoctorpage = new CommonHomeDoctor(driver);
 	}
 
+	@AfterClass()
+	public void logout()
+	{
+		driver.close();
+	}
 //Verify Home Page List Values
 	@Test(dataProvider = "PharmacyPage", dataProviderClass = AsterWebAutomation.class, priority = 1)
 	// @Test(dataProvider = "getHomepageListValues")
@@ -211,4 +216,5 @@ public class ProductionPharmacyPageGuestUserSmokeSuite extends BaseTestUser {
 		}
 		rep.flush();
 	}
+	
 }
