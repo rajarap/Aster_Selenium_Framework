@@ -41,7 +41,7 @@ public class AsterWebAutomation {
 	 @DataProvider(name = "PharmacyPageCategory")
 	    public static Object[] getPharmacypagecategory() {
 	       // Object[] arrObj = DataProviderUtils.getExcelData("./AsterWebAutomation.xlsx", "HomePage");
-	    	return new Object [] {"Top Deals For You","New Arrivals","Essential Products"}; 
+	    	return new Object [] {"Top Deals For You"}; 
 	    			//;
 	    }
 

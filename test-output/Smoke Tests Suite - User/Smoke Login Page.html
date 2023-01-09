@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Smoke Login Page</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>22/3/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>2/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Fri Dec 30 16:31:59 GST 2022</td>
+<td>Started on:</td><td>Mon Jan 09 22:53:59 GST 2023</td>
 </tr>
-<tr><td>Total time:</td><td>1644 seconds (1644114 ms)</td>
+<tr><td>Total time:</td><td>431 seconds (431330 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,59 +75,17 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite.VerifyAddandRemoveProducttoCart()'><b>VerifyAddandRemoveProducttoCart</b><br>Test class: productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite<br>Parameters: New Arrivals</td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//h2[text()=&apos;New Arrivals&apos;]/following-sibling::a[text()=&apos;View All&apos;]&quot;}
-  (Session info: chrome=108.0.5359.125)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;CHQ-L-5ZSFLN3&apos;, ip: &apos;192.168.0.141&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.125, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\SRIVID~1.MER\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:64156}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: c065d3b73b5776876f236c8f4562f156
-*** Element info: {Using=xpath, value=//h2[text()=&apos;New Arrivals&apos;]/following-sibling::a[text()=&apos;View All&apos;]}
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at pageObjects.Aster.HomePage.ClickonViewAll(HomePage.java:90)
-	at productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite.VerifyAddandRemoveProducttoCart(ProductionPharmacyPageGuestUserSmokeSuite.java:136)
+<td title='productionSmoke.ProductionHomePageLoginUserSmokeSuite.BookAppointment()'><b>BookAppointment</b><br>Test class: productionSmoke.ProductionHomePageLoginUserSmokeSuite<br>Parameters: General Medicine</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;String.equals(Object)&quot; because &quot;doctorName&quot; is null
+	at productionSmoke.ProductionHomePageLoginUserSmokeSuite.BookAppointment(ProductionHomePageLoginUserSmokeSuite.java:292)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.base/java.lang.Thread.run(Thread.java:833)
-... Removed 22 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace587145422", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace587145422'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//h2[text()=&apos;New Arrivals&apos;]/following-sibling::a[text()=&apos;View All&apos;]&quot;}
-  (Session info: chrome=108.0.5359.125)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;CHQ-L-5ZSFLN3&apos;, ip: &apos;192.168.0.141&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.125, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\SRIVID~1.MER\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:64156}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: c065d3b73b5776876f236c8f4562f156
-*** Element info: {Using=xpath, value=//h2[text()=&apos;New Arrivals&apos;]/following-sibling::a[text()=&apos;View All&apos;]}
-	at jdk.internal.reflect.GeneratedConstructorAccessor20.newInstance(Unknown Source)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at pageObjects.Aster.HomePage.ClickonViewAll(HomePage.java:90)
-	at productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite.VerifyAddandRemoveProducttoCart(ProductionPharmacyPageGuestUserSmokeSuite.java:136)
+... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace135570722", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace135570722'><pre>java.lang.NullPointerException: Cannot invoke &quot;String.equals(Object)&quot; because &quot;doctorName&quot; is null
+	at productionSmoke.ProductionHomePageLoginUserSmokeSuite.BookAppointment(ProductionHomePageLoginUserSmokeSuite.java:292)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -152,180 +110,8 @@ Session ID: c065d3b73b5776876f236c8f4562f156
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.base/java.lang.Thread.run(Thread.java:833)
 </pre></div></td>
-<td>24</td>
-<td>productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite@60f00693</td></tr>
-<tr>
-<td title='productionSmoke.ProductionHomePageGuestUserSmokeSuite.VerifyAddandRemoveProducttoCart()'><b>VerifyAddandRemoveProducttoCart</b><br>Test class: productionSmoke.ProductionHomePageGuestUserSmokeSuite<br>Parameters: Top Deals for You</td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[@class=&apos;cartBox&apos;]//div[@class=&apos;badge&apos;]&quot;}
-  (Session info: chrome=108.0.5359.125)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;CHQ-L-5ZSFLN3&apos;, ip: &apos;192.168.0.141&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.125, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\SRIVID~1.MER\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:64072}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 03042db9f0b93bdf8009b096db840bf9
-*** Element info: {Using=xpath, value=//div[@class=&apos;cartBox&apos;]//div[@class=&apos;badge&apos;]}
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy17.isDisplayed(Unknown Source)
-	at pageObjects.Aster.CommonHomePharmacy.cartitemscountvalidation(CommonHomePharmacy.java:394)
-	at productionSmoke.ProductionHomePageGuestUserSmokeSuite.VerifyAddandRemoveProducttoCart(ProductionHomePageGuestUserSmokeSuite.java:247)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-... Removed 22 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1872263737", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1872263737'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[@class=&apos;cartBox&apos;]//div[@class=&apos;badge&apos;]&quot;}
-  (Session info: chrome=108.0.5359.125)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;CHQ-L-5ZSFLN3&apos;, ip: &apos;192.168.0.141&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.125, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\SRIVID~1.MER\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:64072}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 03042db9f0b93bdf8009b096db840bf9
-*** Element info: {Using=xpath, value=//div[@class=&apos;cartBox&apos;]//div[@class=&apos;badge&apos;]}
-	at jdk.internal.reflect.GeneratedConstructorAccessor20.newInstance(Unknown Source)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy17.isDisplayed(Unknown Source)
-	at pageObjects.Aster.CommonHomePharmacy.cartitemscountvalidation(CommonHomePharmacy.java:394)
-	at productionSmoke.ProductionHomePageGuestUserSmokeSuite.VerifyAddandRemoveProducttoCart(ProductionHomePageGuestUserSmokeSuite.java:247)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:808)
-	at org.testng.TestRunner.run(TestRunner.java:603)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
-	at org.testng.SuiteRunner.access$000(SuiteRunner.java:32)
-	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:467)
-	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-</pre></div></td>
-<td>43</td>
-<td>productionSmoke.ProductionHomePageGuestUserSmokeSuite@69c81773</td></tr>
-<tr>
-<td title='productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite.VerifyAddandRemoveProducttoCart()'><b>VerifyAddandRemoveProducttoCart</b><br>Test class: productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite<br>Parameters: Essential Products</td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[@class=&apos;cartBox&apos;]//div[@class=&apos;badge&apos;]&quot;}
-  (Session info: chrome=108.0.5359.125)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;CHQ-L-5ZSFLN3&apos;, ip: &apos;192.168.0.141&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.125, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\SRIVID~1.MER\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:64156}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: c065d3b73b5776876f236c8f4562f156
-*** Element info: {Using=xpath, value=//div[@class=&apos;cartBox&apos;]//div[@class=&apos;badge&apos;]}
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy17.isDisplayed(Unknown Source)
-	at pageObjects.Aster.CommonHomePharmacy.cartitemscountvalidation(CommonHomePharmacy.java:394)
-	at productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite.VerifyAddandRemoveProducttoCart(ProductionPharmacyPageGuestUserSmokeSuite.java:141)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-... Removed 22 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1865984163", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1865984163'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[@class=&apos;cartBox&apos;]//div[@class=&apos;badge&apos;]&quot;}
-  (Session info: chrome=108.0.5359.125)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;CHQ-L-5ZSFLN3&apos;, ip: &apos;192.168.0.141&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.125, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\SRIVID~1.MER\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:64156}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: c065d3b73b5776876f236c8f4562f156
-*** Element info: {Using=xpath, value=//div[@class=&apos;cartBox&apos;]//div[@class=&apos;badge&apos;]}
-	at jdk.internal.reflect.GeneratedConstructorAccessor20.newInstance(Unknown Source)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy17.isDisplayed(Unknown Source)
-	at pageObjects.Aster.CommonHomePharmacy.cartitemscountvalidation(CommonHomePharmacy.java:394)
-	at productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite.VerifyAddandRemoveProducttoCart(ProductionPharmacyPageGuestUserSmokeSuite.java:141)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:808)
-	at org.testng.TestRunner.run(TestRunner.java:603)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
-	at org.testng.SuiteRunner.access$000(SuiteRunner.java:32)
-	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:467)
-	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-</pre></div></td>
-<td>49</td>
-<td>productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite@60f00693</td></tr>
+<td>40</td>
+<td>productionSmoke.ProductionHomePageLoginUserSmokeSuite@68c9d179</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -335,115 +121,15 @@ Session ID: c065d3b73b5776876f236c8f4562f156
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite.VerifyAddandRemoveProducttoCart()'><b>VerifyAddandRemoveProducttoCart</b><br>Test class: productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite<br>Parameters: Top Deals For You</td>
+<td title='productionSmoke.ProductionHomePageLoginUserSmokeSuite.VerifyOrderPlacedwithCashorCardOnDelivery()'><b>VerifyOrderPlacedwithCashorCardOnDelivery</b><br>Test class: productionSmoke.ProductionHomePageLoginUserSmokeSuite<br>Parameters: Top Deals For You</td>
 <td></td>
-<td>234</td>
-<td>productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite@60f00693</td></tr>
+<td>278</td>
+<td>productionSmoke.ProductionHomePageLoginUserSmokeSuite@68c9d179</td></tr>
 <tr>
-<td title='productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite.VerifyPopularCategories()'><b>VerifyPopularCategories</b><br>Test class: productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite</td>
+<td title='productionSmoke.ProductionHomePageLoginUserSmokeSuite.VerifyLoginWithEmail()'><b>VerifyLoginWithEmail</b><br>Test class: productionSmoke.ProductionHomePageLoginUserSmokeSuite</td>
 <td></td>
-<td>27</td>
-<td>productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite@60f00693</td></tr>
-<tr>
-<td title='productionSmoke.ProductionHomePageGuestUserSmokeSuite.VerifyAddandRemoveProducttoCart()'><b>VerifyAddandRemoveProducttoCart</b><br>Test class: productionSmoke.ProductionHomePageGuestUserSmokeSuite<br>Parameters: Bestseller Of The Month</td>
-<td></td>
-<td>186</td>
-<td>productionSmoke.ProductionHomePageGuestUserSmokeSuite@69c81773</td></tr>
-<tr>
-<td title='productionSmoke.ProductionHomePageGuestUserSmokeSuite.BookAppointment()'><b>BookAppointment</b><br>Test class: productionSmoke.ProductionHomePageGuestUserSmokeSuite<br>Parameters: General Medicine</td>
-<td></td>
-<td>76</td>
-<td>productionSmoke.ProductionHomePageGuestUserSmokeSuite@69c81773</td></tr>
-<tr>
-<td title='productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite.VerifyHomepagelist()'><b>VerifyHomepagelist</b><br>Test class: productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite<br>Parameters: Top Deals For You</td>
-<td></td>
-<td>18</td>
-<td>productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite@60f00693</td></tr>
-<tr>
-<td title='productionSmoke.ProductionHomePageGuestUserSmokeSuite.VerifyHomepagelist()'><b>VerifyHomepagelist</b><br>Test class: productionSmoke.ProductionHomePageGuestUserSmokeSuite<br>Parameters: Trending Pharmacy Categories</td>
-<td></td>
-<td>6</td>
-<td>productionSmoke.ProductionHomePageGuestUserSmokeSuite@69c81773</td></tr>
-<tr>
-<td title='productionSmoke.ProductionHomePageGuestUserSmokeSuite.VerifySearchValues()'><b>VerifySearchValues</b><br>Test class: productionSmoke.ProductionHomePageGuestUserSmokeSuite<br>Parameters: Udan</td>
-<td></td>
-<td>21</td>
-<td>productionSmoke.ProductionHomePageGuestUserSmokeSuite@69c81773</td></tr>
-<tr>
-<td title='productionSmoke.ProductionHomePageGuestUserSmokeSuite.VerifyPopularPharmacyCategories()'><b>VerifyPopularPharmacyCategories</b><br>Test class: productionSmoke.ProductionHomePageGuestUserSmokeSuite</td>
-<td></td>
-<td>15</td>
-<td>productionSmoke.ProductionHomePageGuestUserSmokeSuite@69c81773</td></tr>
-<tr>
-<td title='productionSmoke.ProductionHomePageGuestUserSmokeSuite.VerifyTopSpecialties()'><b>VerifyTopSpecialties</b><br>Test class: productionSmoke.ProductionHomePageGuestUserSmokeSuite</td>
-<td></td>
-<td>335</td>
-<td>productionSmoke.ProductionHomePageGuestUserSmokeSuite@69c81773</td></tr>
-<tr>
-<td title='productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite.VerifyHomepagelist()'><b>VerifyHomepagelist</b><br>Test class: productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite<br>Parameters: Essential Products</td>
-<td></td>
-<td>18</td>
-<td>productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite@60f00693</td></tr>
-<tr>
-<td title='productionSmoke.ProductionHomePageGuestUserSmokeSuite.VerifySearchValues()'><b>VerifySearchValues</b><br>Test class: productionSmoke.ProductionHomePageGuestUserSmokeSuite<br>Parameters: Pana</td>
-<td></td>
-<td>58</td>
-<td>productionSmoke.ProductionHomePageGuestUserSmokeSuite@69c81773</td></tr>
-<tr>
-<td title='productionSmoke.ProductionHomePageGuestUserSmokeSuite.VerifyClinicsNearbyYou()'><b>VerifyClinicsNearbyYou</b><br>Test class: productionSmoke.ProductionHomePageGuestUserSmokeSuite</td>
-<td></td>
-<td>373</td>
-<td>productionSmoke.ProductionHomePageGuestUserSmokeSuite@69c81773</td></tr>
-<tr>
-<td title='productionSmoke.ProductionHomePageGuestUserSmokeSuite.VerifyHomepagelist()'><b>VerifyHomepagelist</b><br>Test class: productionSmoke.ProductionHomePageGuestUserSmokeSuite<br>Parameters: Near You</td>
-<td></td>
-<td>6</td>
-<td>productionSmoke.ProductionHomePageGuestUserSmokeSuite@69c81773</td></tr>
-<tr>
-<td title='productionSmoke.ProductionHomePageGuestUserSmokeSuite.VerifySearchValues()'><b>VerifySearchValues</b><br>Test class: productionSmoke.ProductionHomePageGuestUserSmokeSuite<br>Parameters: Udaya</td>
-<td></td>
-<td>28</td>
-<td>productionSmoke.ProductionHomePageGuestUserSmokeSuite@69c81773</td></tr>
-<tr>
-<td title='productionSmoke.ProductionHomePageGuestUserSmokeSuite.VerifyHomepagelist()'><b>VerifyHomepagelist</b><br>Test class: productionSmoke.ProductionHomePageGuestUserSmokeSuite<br>Parameters: Bestseller Of The Month</td>
-<td></td>
-<td>6</td>
-<td>productionSmoke.ProductionHomePageGuestUserSmokeSuite@69c81773</td></tr>
-<tr>
-<td title='productionSmoke.ProductionHomePageGuestUserSmokeSuite.VerifyHomepagelist()'><b>VerifyHomepagelist</b><br>Test class: productionSmoke.ProductionHomePageGuestUserSmokeSuite<br>Parameters: Popular Categories in Pharmacy</td>
-<td></td>
-<td>6</td>
-<td>productionSmoke.ProductionHomePageGuestUserSmokeSuite@69c81773</td></tr>
-<tr>
-<td title='productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite.VerifyHomepagelist()'><b>VerifyHomepagelist</b><br>Test class: productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite<br>Parameters: Popular Categories</td>
-<td></td>
-<td>18</td>
-<td>productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite@60f00693</td></tr>
-<tr>
-<td title='productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite.VerifyHomepagelist()'><b>VerifyHomepagelist</b><br>Test class: productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite<br>Parameters: Shop By Brands</td>
-<td></td>
-<td>18</td>
-<td>productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite@60f00693</td></tr>
-<tr>
-<td title='productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite.VerifyHomepagelist()'><b>VerifyHomepagelist</b><br>Test class: productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite<br>Parameters: New Arrivals</td>
-<td></td>
-<td>18</td>
-<td>productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite@60f00693</td></tr>
-<tr>
-<td title='productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite.VerifyHomepagelist()'><b>VerifyHomepagelist</b><br>Test class: productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite<br>Parameters: Featured Categories</td>
-<td></td>
-<td>18</td>
-<td>productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite@60f00693</td></tr>
-<tr>
-<td title='productionSmoke.ProductionHomePageGuestUserSmokeSuite.VerifyHomepagelist()'><b>VerifyHomepagelist</b><br>Test class: productionSmoke.ProductionHomePageGuestUserSmokeSuite<br>Parameters: Doctors By Specialities</td>
-<td></td>
-<td>6</td>
-<td>productionSmoke.ProductionHomePageGuestUserSmokeSuite@69c81773</td></tr>
-<tr>
-<td title='productionSmoke.ProductionHomePageGuestUserSmokeSuite.VerifyHomepagelist()'><b>VerifyHomepagelist</b><br>Test class: productionSmoke.ProductionHomePageGuestUserSmokeSuite<br>Parameters: Shop By Brands</td>
-<td></td>
-<td>6</td>
-<td>productionSmoke.ProductionHomePageGuestUserSmokeSuite@69c81773</td></tr>
+<td>86</td>
+<td>productionSmoke.ProductionHomePageLoginUserSmokeSuite@68c9d179</td></tr>
 </table><p>
 </body>
 </html>

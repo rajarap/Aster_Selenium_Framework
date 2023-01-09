@@ -8,24 +8,15 @@
   </listeners>
   <test thread-count="5" parallel="tests" name="Smoke Login Page(failed)">
     <classes>
-      <class name="productionSmoke.ProductionHomePageGuestUserSmokeSuite">
+      <class name="productionSmoke.ProductionHomePageLoginUserSmokeSuite">
         <methods>
-          <include name="getPingIdToken"/>
-          <include name="getResult"/>
-          <include name="VerifyAddandRemoveProducttoCart" invocation-numbers="0"/>
-          <include name="tearDown"/>
           <include name="setupTest"/>
-        </methods>
-      </class> <!-- productionSmoke.ProductionHomePageGuestUserSmokeSuite -->
-      <class name="productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite">
-        <methods>
-          <include name="VerifyAddandRemoveProducttoCart" invocation-numbers="1 2"/>
           <include name="getPingIdToken"/>
-          <include name="setupTest"/>
+          <include name="BookAppointment" invocation-numbers="0"/>
           <include name="tearDown"/>
           <include name="getResult"/>
         </methods>
-      </class> <!-- productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite -->
+      </class> <!-- productionSmoke.ProductionHomePageLoginUserSmokeSuite -->
     </classes>
   </test> <!-- Smoke Login Page(failed) -->
 </suite> <!-- Failed suite [Smoke Tests Suite - User] -->

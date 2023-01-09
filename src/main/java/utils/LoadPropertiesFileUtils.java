@@ -67,4 +67,14 @@ public class LoadPropertiesFileUtils {
         return urlResult;
     }
 
+    public static String getenvironment() {
+        
+        LoadPropertiesFileUtils.loadPropertiesFile(DATA_PROPERTIES_FILE_NAME);
+       // String envValue = System.getProperty("env").replace('"', ' ');
+        String envValue =prop.getProperty("environmnet");
+       
+    
+        return envValue;
+    }
+
 }

@@ -43,74 +43,82 @@ public class CommonHomePharmacy {
 
 	@FindBy(xpath = "//div[@class='cartListItemBox']//span")
 	private WebElement cartproductscount;
-	
-	@FindBy(xpath="//button[text()='Select Item']")
+
+	@FindBy(xpath = "//button[text()='Select Item']")
 	private WebElement selectitem;
-	
-	@FindBy(xpath="//input[@name='selectAllCartItems']/following::label[text()='Select All']")
+
+	@FindBy(xpath = "//input[@name='selectAllCartItems']/following::label[text()='Select All']")
 	private WebElement SelectAll;
-	
-	@FindBy(xpath="//button[contains(@class,'btnRemove')]")
+
+	@FindBy(xpath = "//button[contains(@class,'btnRemove')]")
 	private WebElement RemoveItem;
-	
-	@FindBy(xpath="//div[@class='modal-content']//button[text()='Remove']")
+
+	@FindBy(xpath = "//div[@class='modal-content']//button[text()='Remove']")
 	private WebElement Removebutton;
-	
-	@FindBy(xpath="//div[@class='card_wrapper']/p[@class='title']")
+
+	@FindBy(xpath = "//div[@class='card_wrapper']/p[@class='title']")
 	private WebElement CartEmptymessage;
-	
-	@FindBy(xpath="//div[contains(@class,'Toastify')]/div[text()='Item added in cart']")
+
+	@FindBy(xpath = "//div[contains(@class,'Toastify')]/div[text()='Item added in cart']")
 	private WebElement successmessage;
-	
-	@FindBy(xpath="//div[@class='cartBox']//div[@class='badge']")
+
+	@FindBy(xpath = "//div[@class='cartBox']//div[@class='badge']")
 	private WebElement cartitemscount;
-	
 
-	@FindBy(xpath="//button[text()='Checkout']")
+	@FindBy(xpath = "//button[text()='Checkout']")
 	private WebElement checkout;
-	
-	@FindBy(xpath="//div[contains(@class,'toBePaid')]//div[contains(@id,'to-be-paid')]")
-	private WebElement totalpriceincart;
-	
-	//div[contains(@class,'final-price')]
 
-	@FindBy(xpath="//div[@class='final-price']")
+	@FindBy(xpath = "//div[contains(@class,'toBePaid')]//div[contains(@id,'to-be-paid')]")
+	private WebElement totalpriceincart;
+
+	// div[contains(@class,'final-price')]
+
+	@FindBy(xpath = "//div[@class='final-price']")
 	private WebElement totalpriceincheckout;
-	
-	@FindBy(xpath="//div[@class='backArrow']")
+
+	@FindBy(xpath = "//div[@class='backArrow']")
 	private WebElement backarrow;
-	
-	@FindBy(xpath="//button[text()='Select Item']")
+
+	@FindBy(xpath = "//button[text()='Select Item']")
 	private WebElement SelectItem;
-	
-	@FindBy(xpath="//input[@name='selectAllCartItems']")
+
+	@FindBy(xpath = "//input[@name='selectAllCartItems']")
 	private WebElement SelectallcartItems;
-	
-	@FindBy(xpath="//button[text()='Remove']")
+
+	@FindBy(xpath = "//button[text()='Remove']")
 	private WebElement Removecartitems;
-	
-	@FindBy(xpath="//div[@class='modal-content']//button[text()='Remove']")
+
+	@FindBy(xpath = "//div[@class='modal-content']//button[text()='Remove']")
 	private WebElement RemoveAll;
-	
-	@FindBy(xpath="//p[text()='Your Cart is Empty']")
+
+	@FindBy(xpath = "//p[text()='Your Cart is Empty']")
 	private WebElement cartempty;
-	
-	@FindBy(xpath="//span[text()='Cash/Card on Delivery']/following::input[@type='radio'][1]")
+
+	@FindBy(xpath = "//span[text()='Cash/Card on Delivery']/following::input[@type='radio'][1]")
 	private WebElement cashorcardondeliveryradiobutton;
-	
-	@FindBy(xpath="//div[@class='value']")
+
+	@FindBy(xpath = "//div[text()='Total Value']/following-sibling::div[@class='value']")
 	private WebElement totalvalue;
-	
-	@FindBy(xpath="//div[@class='final-price']")
+
+	@FindBy(xpath = "//div[@class='final-price']")
 	private WebElement tobepaid;
-	
-	@FindBy(xpath="//div[@class='earned-points']")
+
+	@FindBy(xpath = "//div[@class='earned-points']")
 	private WebElement securepoints;
-	
-	@FindBy(xpath="//button[text()='Pay']")
+
+	@FindBy(xpath = "//button[contains(@class,'btn-success')]")
 	private WebElement payproceedbutton;
+
+	@FindBy(xpath = "//div[text()='Order ID: ']")
+	private WebElement orderid;
+
+	// div[@class='modal-content']//button[text()='Cancel']
+
+	@FindBy(xpath = "//div[@class='dValue']")
+	private WebElement expectedDeliveryDate;
 	
-	
+	//button[text()='Create a new cart']
+
 	public CommonHomePharmacy(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -170,6 +178,7 @@ public class CommonHomePharmacy {
 	}
 
 	public List<WebElement> getPopularPharmacyCategories() throws InterruptedException {
+		
 		Thread.sleep(3000);
 		WaitUtils.waitForDocumentReadyState(driver);
 		WaitUtils.isElementDisplayed(popularCategories, driver);
@@ -177,13 +186,14 @@ public class CommonHomePharmacy {
 		return categorieslist;
 
 	}
-	
-	public  List<WebElement> getcartitemssize() throws InterruptedException {
+
+	public List<WebElement> getcartitemssize() throws InterruptedException {
 		Thread.sleep(3000);
 		WaitUtils.waitForDocumentReadyState(driver);
-		//WaitUtils.isElementDisplayed(popularCategories, driver);
-		List<WebElement> cartitemslist = driver.findElements(By.xpath("//div[@class='cartContainer']/div[@class='cartItem']"));
-		//int cartlist=cartitemslist.size();
+		// WaitUtils.isElementDisplayed(popularCategories, driver);
+		List<WebElement> cartitemslist = driver
+				.findElements(By.xpath("//div[@class='cartContainer']/div[@class='cartItem']"));
+		// int cartlist=cartitemslist.size();
 		return cartitemslist;
 
 	}
@@ -196,7 +206,7 @@ public class CommonHomePharmacy {
 			WaitUtils.isElementDisplayed(ele, driver);
 			if (ele.isEnabled())
 				ele.click();
-				//WebElementUtils.mouseClick(ele, driver);
+			// WebElementUtils.mouseClick(ele, driver);
 			return true;
 		} catch (org.openqa.selenium.NoSuchElementException e) {
 			return false;
@@ -206,14 +216,20 @@ public class CommonHomePharmacy {
 	}
 
 	public String getProductName(int i) throws InterruptedException {
+		String Val="";
+		try {
+			Thread.sleep(6000);
+			WaitUtils.waitForDocumentReadyState(driver);
+			WebElement ele = driver.findElement(By.xpath("(//div[@class='item']//div[@class='name'])[" + i + "]"));
+			WaitUtils.isElementDisplayed(ele, driver);
+			String productname = ele.getAttribute("title");
+			return productname;
 
-		Thread.sleep(6000);
-		WaitUtils.waitForDocumentReadyState(driver);
-		WebElement ele = driver.findElement(By.xpath("(//div[@class='item']//div[@class='name'])[" + i + "]"));
-		WaitUtils.isElementDisplayed(ele, driver);
-		String productname = ele.getAttribute("title");
-		return productname;
-
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+			return Val;
+		}
+		
+		
 	}
 
 	public String getProductPrice(int i) throws InterruptedException {
@@ -225,24 +241,22 @@ public class CommonHomePharmacy {
 		String productprice = ele.getText();
 		String[] arrOfStr = productprice.split(" ");
 		String Price = arrOfStr[1];
-		if(Price.contains("AED"))
-		{
+		if (Price.contains("AED")) {
 			String[] price = Price.split("AED");
 			return price[0];
-		}
-		else
-		{
-		
+		} else {
+
 			return Price;
 		}
-		
 
 	}
+
 	public String getProductNamefromcart(int i) throws InterruptedException {
 
 		Thread.sleep(6000);
 		WaitUtils.waitForDocumentReadyState(driver);
-		WebElement ele = driver.findElement(By.xpath("(//div[@class='cartContainer']/div[@class='cartItem']//div[contains(@class,'prodName')])[" + i + "]"));
+		WebElement ele = driver.findElement(By.xpath(
+				"(//div[@class='cartContainer']/div[@class='cartItem']//div[contains(@class,'prodName')])[" + i + "]"));
 		WaitUtils.isElementDisplayed(ele, driver);
 		String productname = ele.getText();
 		return productname;
@@ -253,7 +267,8 @@ public class CommonHomePharmacy {
 
 		Thread.sleep(6000);
 		WaitUtils.waitForDocumentReadyState(driver);
-		WebElement ele = driver.findElement(By.xpath("(//div[@class='cartContainer']/div[@class='cartItem']//div[@class='price'])[" + i + "]"));
+		WebElement ele = driver.findElement(
+				By.xpath("(//div[@class='cartContainer']/div[@class='cartItem']//div[@class='price'])[" + i + "]"));
 		WaitUtils.isElementDisplayed(ele, driver);
 		String productprice = ele.getText();
 		String[] arrOfStr = productprice.split(" ");
@@ -261,7 +276,6 @@ public class CommonHomePharmacy {
 		return Price;
 
 	}
-
 
 	public void ClickonCartIcon() throws InterruptedException {
 
@@ -306,7 +320,7 @@ public class CommonHomePharmacy {
 		return Value;
 
 	}
-	
+
 	public void selectItem() throws InterruptedException {
 
 		Thread.sleep(6000);
@@ -315,7 +329,7 @@ public class CommonHomePharmacy {
 		WebElementUtils.mouseClick(selectitem, driver);
 
 	}
-	
+
 	public void selectAllCheckbox() throws InterruptedException {
 
 		Thread.sleep(6000);
@@ -324,6 +338,7 @@ public class CommonHomePharmacy {
 		WebElementUtils.mouseClick(SelectAll, driver);
 
 	}
+
 	public void clickonRemoveItem() throws InterruptedException {
 
 		Thread.sleep(6000);
@@ -332,7 +347,7 @@ public class CommonHomePharmacy {
 		WebElementUtils.mouseClick(RemoveItem, driver);
 
 	}
-	
+
 	public void clickonRemovebutton() throws InterruptedException {
 
 		Thread.sleep(6000);
@@ -341,208 +356,312 @@ public class CommonHomePharmacy {
 		WebElementUtils.mouseClick(Removebutton, driver);
 
 	}
+
 	public boolean getTextCartMessage(String message) throws InterruptedException {
 
 		Thread.sleep(6000);
 		WaitUtils.waitForDocumentReadyState(driver);
 		WaitUtils.isElementDisplayed(CartEmptymessage, driver);
 		String Value = CartEmptymessage.getText();
-		if(Value.equalsIgnoreCase(message))
-		{
+		if (Value.equalsIgnoreCase(message)) {
 			return true;
-		}else
-		{
+		} else {
 			return false;
 		}
 
 	}
-	
-	public boolean verifycartitems(HashMap<String, String> ProductDetails,HashMap<String, String> CartProductDetails) throws InterruptedException {
+
+	public boolean verifycartitems(HashMap<String, String> ProductDetails, HashMap<String, String> CartProductDetails)
+			throws InterruptedException {
 
 		Thread.sleep(6000);
 		WaitUtils.waitForDocumentReadyState(driver);
-		//String key=ProductDetails.keySet();
-		 try{
-		        for (String k : CartProductDetails.keySet())
-		        {
-		            if (!ProductDetails.get(k).equals(CartProductDetails.get(k))) {
-		                return false;
-		            }
-		        } 
-		        for (String y : ProductDetails.keySet())
-		        {
-		            if (!CartProductDetails.containsKey(y)) {
-		                return false;
-		            }
-		        } 
-		    } catch (NullPointerException np) {
-		        return false;
-		    }
-		    return true;
-		
+		// String key=ProductDetails.keySet();
+		try {
+			for (String k : CartProductDetails.keySet()) {
+				if (!ProductDetails.get(k).equals(CartProductDetails.get(k))) {
+					return false;
+				}
+			}
+			for (String y : ProductDetails.keySet()) {
+				if (!CartProductDetails.containsKey(y)) {
+					return false;
+				}
+			}
+		} catch (NullPointerException np) {
+			return false;
+		}
+		return true;
 
 	}
+
 	public boolean successmessage() throws InterruptedException {
 
 		Thread.sleep(6000);
 		WaitUtils.waitForDocumentReadyState(driver);
-		//WaitUtils.isElementDisplayed(successmessage, driver);
-		//String Value = successmessage.getText();
-		if(successmessage.isDisplayed())
-		{
+		// WaitUtils.isElementDisplayed(successmessage, driver);
+		// String Value = successmessage.getText();
+		if (successmessage.isDisplayed()) {
 			return true;
-		}else
-		{
+		} else {
 			return false;
 		}
 
 	}
+	public boolean verifycartitemcount() throws InterruptedException {
+	
+		try {
+			Thread.sleep(6000);
+			WaitUtils.waitForDocumentReadyState(driver);
+			//WaitUtils.isElementDisplayed(cartempty, driver);
+				
+			cartempty.isDisplayed();
+			return true;
+
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+			return false;
+		}
+		
+	}
 
 	public String cartitemscountvalidation() throws InterruptedException {
-		String count;
-		Thread.sleep(6000);
-		WaitUtils.waitForDocumentReadyState(driver);
-		//WaitUtils.isElementDisplayed(successmessage, driver);
-		//String Value = successmessage.getText();
-		if(cartitemscount.isDisplayed())
-		{
+		String count=null;
+		try {
 			Thread.sleep(6000);
-			count =cartitemscount.getText();
-		}else
-		{
-			count=null;
+			WaitUtils.waitForDocumentReadyState(driver);
+			WaitUtils.isElementDisplayed(cartitemscount, driver);
+			Thread.sleep(6000);
+			String val = cartitemscount.getText();
+			count=val;
+			return count;
+
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+			return count;
 		}
-		return count;
+		
+		
+		
 
 	}
 
 	public void clickoncheckoutbutton() throws InterruptedException {
+		
+		try {
+			Thread.sleep(6000);
+			Thread.sleep(6000);
+			WaitUtils.waitForDocumentReadyState(driver);
+			if(checkout.isDisplayed())
+			{
+				WebElementUtils.mouseClick(checkout, driver);
+			}
+			//WaitUtils.isElementDisplayed(checkout, driver);
+			
 
-		Thread.sleep(6000);
-		WaitUtils.waitForDocumentReadyState(driver);
-		WaitUtils.isElementDisplayed(checkout, driver);
-		WebElementUtils.mouseClick(checkout, driver);
+		} catch (org.openqa.selenium.NoSuchElementException e) {
 
-	} 
-	public boolean comparecartandcheckoutprice()throws InterruptedException
-	{
+		}
+		
+
+	}
+
+	public boolean comparecartandcheckoutprice() throws InterruptedException {
 		Thread.sleep(6000);
 		WaitUtils.waitForDocumentReadyState(driver);
 		WaitUtils.isElementDisplayed(totalpriceincart, driver);
-		String cartprice =totalpriceincart.getText();
+		String cartprice = totalpriceincart.getText();
 		clickoncheckoutbutton();
 		Thread.sleep(6000);
 		WaitUtils.isElementDisplayed(totalpriceincheckout, driver);
-		String checkoutprice =totalpriceincheckout.getText();
-		if(cartprice.equals(checkoutprice))
-		{
+		String checkoutprice = totalpriceincheckout.getText();
+		if (cartprice.equals(checkoutprice)) {
 			return true;
-		}
-		else
-		{
+		} else {
 			return false;
 		}
 	}
+
 	public void clickonbackarrow() throws InterruptedException {
+		
+		try {
+			Thread.sleep(6000);
+			WaitUtils.waitForDocumentReadyState(driver);
+			WaitUtils.isElementDisplayed(backarrow, driver);
+			WebElementUtils.mouseClick(backarrow, driver);
 
-		Thread.sleep(6000);
-		WaitUtils.waitForDocumentReadyState(driver);
-		WaitUtils.isElementDisplayed(backarrow, driver);
-		WebElementUtils.mouseClick(backarrow, driver);
+		} catch (org.openqa.selenium.NoSuchElementException e) {
 
-	} 
+		}
+		
+
+	}
+
 	public void clickonselectItem() throws InterruptedException {
+		
+		try {
+			Thread.sleep(6000);
+			WaitUtils.waitForDocumentReadyState(driver);
+			WaitUtils.isElementDisplayed(SelectItem, driver);
+			WebElementUtils.mouseClick(SelectItem, driver);
 
-		Thread.sleep(6000);
-		WaitUtils.waitForDocumentReadyState(driver);
-		WaitUtils.isElementDisplayed(SelectItem, driver);
-		WebElementUtils.mouseClick(SelectItem, driver);
+		} catch (org.openqa.selenium.NoSuchElementException e) {
 
-	} 
+		}
+		
+
+	}
+
 	public void clickonselectallcheck() throws InterruptedException {
+		
+		try {
+			Thread.sleep(6000);
+			WaitUtils.waitForDocumentReadyState(driver);
+			WaitUtils.isElementDisplayed(SelectallcartItems, driver);
+			WebElementUtils.mouseClick(SelectallcartItems, driver);
 
-		Thread.sleep(6000);
-		WaitUtils.waitForDocumentReadyState(driver);
-		WaitUtils.isElementDisplayed(SelectallcartItems, driver);
-		WebElementUtils.mouseClick(SelectallcartItems, driver);
+		} catch (org.openqa.selenium.NoSuchElementException e) {
 
-	} 
+		}
+		
+
+	}
+
 	public void clickonRemove() throws InterruptedException {
+		
+		try {
+			Thread.sleep(6000);
+			WaitUtils.waitForDocumentReadyState(driver);
+			WaitUtils.isElementDisplayed(Removecartitems, driver);
+			WebElementUtils.mouseClick(Removecartitems, driver);
 
-		Thread.sleep(6000);
-		WaitUtils.waitForDocumentReadyState(driver);
-		WaitUtils.isElementDisplayed(Removecartitems, driver);
-		WebElementUtils.mouseClick(Removecartitems, driver);
+		} catch (org.openqa.selenium.NoSuchElementException e) {
 
-	} 
-	
+		}
+		
+	}
+
 	public void clickonRemovepopup() throws InterruptedException {
+		try {
+			Thread.sleep(6000);
+			WaitUtils.waitForDocumentReadyState(driver);
+			WaitUtils.isElementDisplayed(RemoveAll, driver);
+			WebElementUtils.mouseClick(RemoveAll, driver);
 
-		Thread.sleep(6000);
-		WaitUtils.waitForDocumentReadyState(driver);
-		WaitUtils.isElementDisplayed(RemoveAll, driver);
-		WebElementUtils.mouseClick(RemoveAll, driver);
+		} catch (org.openqa.selenium.NoSuchElementException e) {
 
-	} 
-	public boolean RemoveCartItemsfromCart() throws InterruptedException
-	{
+		}
+		
+
+	}
+
+	public boolean RemoveCartItemsfromCart() throws InterruptedException {
 		Thread.sleep(6000);
 		WaitUtils.waitForDocumentReadyState(driver);
 		clickonselectItem();
 		clickonselectallcheck();
 		clickonRemove();
 		clickonRemovepopup();
-		if(WaitUtils.isElementDisplayed(cartempty, driver))
-		{
+		if (WaitUtils.isElementDisplayed(cartempty, driver)) {
 			return true;
-		}
-		else
-		{
+		} else {
 			return false;
 		}
 	}
-	public void clickOnCashorCardonDeliveryRadioButton() throws InterruptedException
-	{
-		Thread.sleep(6000);
-		WaitUtils.waitForDocumentReadyState(driver);
-		WaitUtils.isElementDisplayed(cashorcardondeliveryradiobutton, driver);
-		WebElementUtils.mouseClick(cashorcardondeliveryradiobutton, driver);
+
+	public void clickOnCashorCardonDeliveryRadioButton() throws InterruptedException {
+		try {
+			Thread.sleep(6000);
+			WaitUtils.waitForDocumentReadyState(driver);
+			WaitUtils.isElementDisplayed(cashorcardondeliveryradiobutton, driver);
+			//cashorcardondeliveryradiobutton.click();
+			WebElementUtils.mouseClick(cashorcardondeliveryradiobutton, driver);
+
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+
+		}
 	}
-	
-	public String verifyTotalValueOfProduct() throws InterruptedException
-	{
-		Thread.sleep(6000);
-		WaitUtils.waitForDocumentReadyState(driver);
-		WaitUtils.isElementDisplayed(totalvalue, driver);
-		String totalproductvalue = totalvalue.getText();
-		return totalproductvalue;
+
+	public String verifyTotalValueOfProduct() throws InterruptedException {
+		String val = "";
+		try {
+			Thread.sleep(6000);
+			WaitUtils.waitForDocumentReadyState(driver);
+			WaitUtils.isElementDisplayed(totalvalue, driver);
+			String totalproductvalue = totalvalue.getText();
+			val = totalproductvalue;
+			return val;
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+			return val;
+		}
+
 	}
-	
-	public String verifyToBePaid() throws InterruptedException
-	{
-		Thread.sleep(6000);
-		WaitUtils.waitForDocumentReadyState(driver);
-		WaitUtils.isElementDisplayed(tobepaid, driver);
-		String tobepaidvalue = tobepaid.getText();
-		return tobepaidvalue;
+
+	public String verifyToBePaid() throws InterruptedException {
+		String val = "";
+		try {
+			Thread.sleep(6000);
+			WaitUtils.waitForDocumentReadyState(driver);
+			WaitUtils.isElementDisplayed(tobepaid, driver);
+			String tobepaidvalue = tobepaid.getText();
+			val = tobepaidvalue;
+			return val;
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+			return val;
+		}
+
 	}
-	
-	
-	public String verifySecurePoints() throws InterruptedException
-	{
-		Thread.sleep(6000);
-		WaitUtils.waitForDocumentReadyState(driver);
-		WaitUtils.isElementDisplayed(securepoints, driver);
-		String totalsecurepoints = securepoints.getText();
-		return totalsecurepoints;
+
+	public String verifySecurePoints() throws InterruptedException {
+		String val = "";
+		try {
+			Thread.sleep(6000);
+			WaitUtils.waitForDocumentReadyState(driver);
+			WaitUtils.isElementDisplayed(securepoints, driver);
+			String totalsecurepoints = securepoints.getText();
+			val = totalsecurepoints;
+			return val;
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+			return val;
+		}
+
 	}
-	
-	public void clickOnPayorProceedButton() throws InterruptedException
-	{
+
+	public void clickOnPayorProceedButton() throws InterruptedException {
+
 		Thread.sleep(6000);
 		WaitUtils.waitForDocumentReadyState(driver);
 		WaitUtils.isElementDisplayed(payproceedbutton, driver);
 		WebElementUtils.mouseClick(payproceedbutton, driver);
 	}
-	
+
+	public String verifyOrderId() throws InterruptedException {
+		String val = "";
+		try {
+			Thread.sleep(6000);
+			WaitUtils.waitForDocumentReadyState(driver);
+			WaitUtils.isElementDisplayed(orderid, driver);
+			String orderplacedid = orderid.getText();
+			val = orderplacedid;
+			return val;
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+			return val;
+		}
+
+	}
+
+	public String getExpectedDeliverydate() throws InterruptedException {
+		String val = "";
+		try {
+			Thread.sleep(6000);
+			WaitUtils.waitForDocumentReadyState(driver);
+			WaitUtils.isElementDisplayed(expectedDeliveryDate, driver);
+			String deliverydate = expectedDeliveryDate.getText();
+			val = deliverydate;
+			return val;
+
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+			return val;
+		}
+
+	}
+
 }

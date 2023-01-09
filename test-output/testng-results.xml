@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="2" total="27" passed="22" failed="3" skipped="0">
+<testng-results ignored="0" total="3" passed="2" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-12-30T16:31:59 GST" name="Smoke Tests Suite - User" finished-at="2022-12-30T16:59:23 GST" duration-ms="1644114">
+  <suite started-at="2023-01-09T22:53:59 GST" name="Smoke Tests Suite - User" finished-at="2023-01-09T23:01:11 GST" duration-ms="431330">
     <groups>
     </groups>
-    <test started-at="2022-12-30T16:31:59 GST" name="Smoke Login Page" finished-at="2022-12-30T16:59:23 GST" duration-ms="1644114">
-      <class name="productionSmoke.ProductionHomePageGuestUserSmokeSuite">
-        <test-method is-config="true" signature="getPingIdToken(java.lang.String,java.lang.String)[pri:0, instance:productionSmoke.ProductionHomePageGuestUserSmokeSuite@69c81773]" started-at="2022-12-30T16:31:59 GST" name="getPingIdToken" finished-at="2022-12-30T16:31:59 GST" duration-ms="13" status="PASS">
+    <test started-at="2023-01-09T22:53:59 GST" name="Smoke Login Page" finished-at="2023-01-09T23:01:11 GST" duration-ms="431330">
+      <class name="productionSmoke.ProductionHomePageLoginUserSmokeSuite">
+        <test-method is-config="true" signature="getPingIdToken(java.lang.String,java.lang.String)[pri:0, instance:productionSmoke.ProductionHomePageLoginUserSmokeSuite@68c9d179]" started-at="2023-01-09T22:53:59 GST" name="getPingIdToken" finished-at="2023-01-09T22:53:59 GST" duration-ms="8" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -23,299 +23,48 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getPingIdToken -->
-        <test-method is-config="true" signature="setupTest()[pri:0, instance:productionSmoke.ProductionHomePageGuestUserSmokeSuite@69c81773]" started-at="2022-12-30T16:31:59 GST" name="setupTest" finished-at="2022-12-30T16:32:10 GST" duration-ms="10255" status="PASS">
+        <test-method is-config="true" signature="setupTest()[pri:0, instance:productionSmoke.ProductionHomePageLoginUserSmokeSuite@68c9d179]" started-at="2023-01-09T22:53:59 GST" name="setupTest" finished-at="2023-01-09T22:54:23 GST" duration-ms="24006" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupTest -->
-        <test-method signature="VerifyHomepagelist(java.lang.String)[pri:1, instance:productionSmoke.ProductionHomePageGuestUserSmokeSuite@69c81773]" started-at="2022-12-30T16:32:10 GST" name="VerifyHomepagelist" data-provider="HomePage" finished-at="2022-12-30T16:32:16 GST" duration-ms="6125" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Popular Categories in Pharmacy]]>
-              </value>
-            </param>
-          </params>
+        <test-method signature="VerifyLoginWithEmail()[pri:1, instance:productionSmoke.ProductionHomePageLoginUserSmokeSuite@68c9d179]" started-at="2023-01-09T22:54:23 GST" name="VerifyLoginWithEmail" finished-at="2023-01-09T22:55:50 GST" duration-ms="86697" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- VerifyHomepagelist -->
-        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:productionSmoke.ProductionHomePageGuestUserSmokeSuite@69c81773]" started-at="2022-12-30T16:32:16 GST" name="getResult" finished-at="2022-12-30T16:32:16 GST" duration-ms="519" status="PASS">
+        </test-method> <!-- VerifyLoginWithEmail -->
+        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:productionSmoke.ProductionHomePageLoginUserSmokeSuite@68c9d179]" started-at="2023-01-09T22:55:50 GST" name="getResult" finished-at="2023-01-09T22:55:51 GST" duration-ms="472" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=VerifyHomepagelist status=SUCCESS method=ProductionHomePageGuestUserSmokeSuite.VerifyHomepagelist(java.lang.String)[pri:1, instance:productionSmoke.ProductionHomePageGuestUserSmokeSuite@69c81773] output={null}]]]>
+                <![CDATA[[TestResult name=VerifyLoginWithEmail status=SUCCESS method=ProductionHomePageLoginUserSmokeSuite.VerifyLoginWithEmail()[pri:1, instance:productionSmoke.ProductionHomePageLoginUserSmokeSuite@68c9d179] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getResult -->
-        <test-method signature="VerifyHomepagelist(java.lang.String)[pri:1, instance:productionSmoke.ProductionHomePageGuestUserSmokeSuite@69c81773]" started-at="2022-12-30T16:32:16 GST" name="VerifyHomepagelist" data-provider="HomePage" finished-at="2022-12-30T16:32:22 GST" duration-ms="6084" status="PASS">
+        <test-method signature="VerifyOrderPlacedwithCashorCardOnDelivery(java.lang.String)[pri:2, instance:productionSmoke.ProductionHomePageLoginUserSmokeSuite@68c9d179]" started-at="2023-01-09T22:55:51 GST" name="VerifyOrderPlacedwithCashorCardOnDelivery" data-provider="PharmacyPageCategory" finished-at="2023-01-09T23:00:29 GST" duration-ms="278161" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Doctors By Specialities]]>
+                <![CDATA[Top Deals For You]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- VerifyHomepagelist -->
-        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:productionSmoke.ProductionHomePageGuestUserSmokeSuite@69c81773]" started-at="2022-12-30T16:32:22 GST" name="getResult" finished-at="2022-12-30T16:32:22 GST" duration-ms="35" status="PASS">
+        </test-method> <!-- VerifyOrderPlacedwithCashorCardOnDelivery -->
+        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:productionSmoke.ProductionHomePageLoginUserSmokeSuite@68c9d179]" started-at="2023-01-09T23:00:29 GST" name="getResult" finished-at="2023-01-09T23:00:29 GST" duration-ms="33" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=VerifyHomepagelist status=SUCCESS method=ProductionHomePageGuestUserSmokeSuite.VerifyHomepagelist(java.lang.String)[pri:1, instance:productionSmoke.ProductionHomePageGuestUserSmokeSuite@69c81773] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getResult -->
-        <test-method signature="VerifyHomepagelist(java.lang.String)[pri:1, instance:productionSmoke.ProductionHomePageGuestUserSmokeSuite@69c81773]" started-at="2022-12-30T16:32:22 GST" name="VerifyHomepagelist" data-provider="HomePage" finished-at="2022-12-30T16:32:29 GST" duration-ms="6101" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Bestseller Of The Month]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- VerifyHomepagelist -->
-        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:productionSmoke.ProductionHomePageGuestUserSmokeSuite@69c81773]" started-at="2022-12-30T16:32:29 GST" name="getResult" finished-at="2022-12-30T16:32:29 GST" duration-ms="32" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=VerifyHomepagelist status=SUCCESS method=ProductionHomePageGuestUserSmokeSuite.VerifyHomepagelist(java.lang.String)[pri:1, instance:productionSmoke.ProductionHomePageGuestUserSmokeSuite@69c81773] output={null}]]]>
+                <![CDATA[[TestResult name=VerifyOrderPlacedwithCashorCardOnDelivery status=SUCCESS method=ProductionHomePageLoginUserSmokeSuite.VerifyOrderPlacedwithCashorCardOnDelivery(java.lang.String)[pri:2, instance:productionSmoke.ProductionHomePageLoginUserSmokeSuite@68c9d179] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getResult -->
-        <test-method signature="VerifyHomepagelist(java.lang.String)[pri:1, instance:productionSmoke.ProductionHomePageGuestUserSmokeSuite@69c81773]" started-at="2022-12-30T16:32:29 GST" name="VerifyHomepagelist" data-provider="HomePage" finished-at="2022-12-30T16:32:35 GST" duration-ms="6083" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Trending Pharmacy Categories]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- VerifyHomepagelist -->
-        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:productionSmoke.ProductionHomePageGuestUserSmokeSuite@69c81773]" started-at="2022-12-30T16:32:35 GST" name="getResult" finished-at="2022-12-30T16:32:35 GST" duration-ms="39" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=VerifyHomepagelist status=SUCCESS method=ProductionHomePageGuestUserSmokeSuite.VerifyHomepagelist(java.lang.String)[pri:1, instance:productionSmoke.ProductionHomePageGuestUserSmokeSuite@69c81773] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getResult -->
-        <test-method signature="VerifyHomepagelist(java.lang.String)[pri:1, instance:productionSmoke.ProductionHomePageGuestUserSmokeSuite@69c81773]" started-at="2022-12-30T16:32:35 GST" name="VerifyHomepagelist" data-provider="HomePage" finished-at="2022-12-30T16:32:41 GST" duration-ms="6086" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Near You]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- VerifyHomepagelist -->
-        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:productionSmoke.ProductionHomePageGuestUserSmokeSuite@69c81773]" started-at="2022-12-30T16:32:41 GST" name="getResult" finished-at="2022-12-30T16:32:41 GST" duration-ms="24" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=VerifyHomepagelist status=SUCCESS method=ProductionHomePageGuestUserSmokeSuite.VerifyHomepagelist(java.lang.String)[pri:1, instance:productionSmoke.ProductionHomePageGuestUserSmokeSuite@69c81773] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getResult -->
-        <test-method signature="VerifyHomepagelist(java.lang.String)[pri:1, instance:productionSmoke.ProductionHomePageGuestUserSmokeSuite@69c81773]" started-at="2022-12-30T16:32:41 GST" name="VerifyHomepagelist" data-provider="HomePage" finished-at="2022-12-30T16:32:47 GST" duration-ms="6083" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Shop By Brands]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- VerifyHomepagelist -->
-        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:productionSmoke.ProductionHomePageGuestUserSmokeSuite@69c81773]" started-at="2022-12-30T16:32:47 GST" name="getResult" finished-at="2022-12-30T16:32:47 GST" duration-ms="46" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=VerifyHomepagelist status=SUCCESS method=ProductionHomePageGuestUserSmokeSuite.VerifyHomepagelist(java.lang.String)[pri:1, instance:productionSmoke.ProductionHomePageGuestUserSmokeSuite@69c81773] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getResult -->
-        <test-method signature="VerifyPopularPharmacyCategories()[pri:2, instance:productionSmoke.ProductionHomePageGuestUserSmokeSuite@69c81773]" started-at="2022-12-30T16:35:14 GST" name="VerifyPopularPharmacyCategories" finished-at="2022-12-30T16:35:29 GST" duration-ms="15518" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- VerifyPopularPharmacyCategories -->
-        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:productionSmoke.ProductionHomePageGuestUserSmokeSuite@69c81773]" started-at="2022-12-30T16:35:29 GST" name="getResult" finished-at="2022-12-30T16:35:29 GST" duration-ms="24" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=VerifyPopularPharmacyCategories status=SUCCESS method=ProductionHomePageGuestUserSmokeSuite.VerifyPopularPharmacyCategories()[pri:2, instance:productionSmoke.ProductionHomePageGuestUserSmokeSuite@69c81773] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getResult -->
-        <test-method signature="VerifyTopSpecialties()[pri:3, instance:productionSmoke.ProductionHomePageGuestUserSmokeSuite@69c81773]" started-at="2022-12-30T16:40:38 GST" name="VerifyTopSpecialties" finished-at="2022-12-30T16:46:13 GST" duration-ms="335859" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- VerifyTopSpecialties -->
-        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:productionSmoke.ProductionHomePageGuestUserSmokeSuite@69c81773]" started-at="2022-12-30T16:46:13 GST" name="getResult" finished-at="2022-12-30T16:46:14 GST" duration-ms="50" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=VerifyTopSpecialties status=SUCCESS method=ProductionHomePageGuestUserSmokeSuite.VerifyTopSpecialties()[pri:3, instance:productionSmoke.ProductionHomePageGuestUserSmokeSuite@69c81773] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getResult -->
-        <test-method signature="VerifyClinicsNearbyYou()[pri:4, instance:productionSmoke.ProductionHomePageGuestUserSmokeSuite@69c81773]" started-at="2022-12-30T16:46:14 GST" name="VerifyClinicsNearbyYou" finished-at="2022-12-30T16:52:27 GST" duration-ms="373721" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- VerifyClinicsNearbyYou -->
-        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:productionSmoke.ProductionHomePageGuestUserSmokeSuite@69c81773]" started-at="2022-12-30T16:52:27 GST" name="getResult" finished-at="2022-12-30T16:52:27 GST" duration-ms="26" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=VerifyClinicsNearbyYou status=SUCCESS method=ProductionHomePageGuestUserSmokeSuite.VerifyClinicsNearbyYou()[pri:4, instance:productionSmoke.ProductionHomePageGuestUserSmokeSuite@69c81773] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getResult -->
-        <test-method signature="VerifyAddandRemoveProducttoCart(java.lang.String)[pri:5, instance:productionSmoke.ProductionHomePageGuestUserSmokeSuite@69c81773]" started-at="2022-12-30T16:52:27 GST" name="VerifyAddandRemoveProducttoCart" data-provider="Pharmacy" finished-at="2022-12-30T16:53:10 GST" duration-ms="43005" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Top Deals for You]]>
-              </value>
-            </param>
-          </params>
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='cartBox']//div[@class='badge']"}
-  (Session info: chrome=108.0.5359.125)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'CHQ-L-5ZSFLN3', ip: '192.168.0.141', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.125, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\SRIVID~1.MER\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:64072}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 03042db9f0b93bdf8009b096db840bf9
-*** Element info: {Using=xpath, value=//div[@class='cartBox']//div[@class='badge']}]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='cartBox']//div[@class='badge']"}
-  (Session info: chrome=108.0.5359.125)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'CHQ-L-5ZSFLN3', ip: '192.168.0.141', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.125, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\SRIVID~1.MER\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:64072}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 03042db9f0b93bdf8009b096db840bf9
-*** Element info: {Using=xpath, value=//div[@class='cartBox']//div[@class='badge']}
-at jdk.internal.reflect.GeneratedConstructorAccessor20.newInstance(Unknown Source)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at jdk.proxy2/jdk.proxy2.$Proxy17.isDisplayed(Unknown Source)
-at pageObjects.Aster.CommonHomePharmacy.cartitemscountvalidation(CommonHomePharmacy.java:394)
-at productionSmoke.ProductionHomePageGuestUserSmokeSuite.VerifyAddandRemoveProducttoCart(ProductionHomePageGuestUserSmokeSuite.java:247)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:808)
-at org.testng.TestRunner.run(TestRunner.java:603)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
-at org.testng.SuiteRunner.access$000(SuiteRunner.java:32)
-at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:467)
-at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
-at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-at java.base/java.lang.Thread.run(Thread.java:833)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- VerifyAddandRemoveProducttoCart -->
-        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:productionSmoke.ProductionHomePageGuestUserSmokeSuite@69c81773]" started-at="2022-12-30T16:53:11 GST" name="getResult" finished-at="2022-12-30T16:53:11 GST" duration-ms="33" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=VerifyAddandRemoveProducttoCart status=FAILURE method=ProductionHomePageGuestUserSmokeSuite.VerifyAddandRemoveProducttoCart(java.lang.String)[pri:5, instance:productionSmoke.ProductionHomePageGuestUserSmokeSuite@69c81773] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getResult -->
-        <test-method signature="VerifyAddandRemoveProducttoCart(java.lang.String)[pri:5, instance:productionSmoke.ProductionHomePageGuestUserSmokeSuite@69c81773]" started-at="2022-12-30T16:53:11 GST" name="VerifyAddandRemoveProducttoCart" data-provider="Pharmacy" finished-at="2022-12-30T16:56:17 GST" duration-ms="186264" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Bestseller Of The Month]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- VerifyAddandRemoveProducttoCart -->
-        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:productionSmoke.ProductionHomePageGuestUserSmokeSuite@69c81773]" started-at="2022-12-30T16:56:17 GST" name="getResult" finished-at="2022-12-30T16:56:17 GST" duration-ms="51" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=VerifyAddandRemoveProducttoCart status=SUCCESS method=ProductionHomePageGuestUserSmokeSuite.VerifyAddandRemoveProducttoCart(java.lang.String)[pri:5, instance:productionSmoke.ProductionHomePageGuestUserSmokeSuite@69c81773] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getResult -->
-        <test-method signature="BookAppointment(java.lang.String)[pri:6, instance:productionSmoke.ProductionHomePageGuestUserSmokeSuite@69c81773]" started-at="2022-12-30T16:56:17 GST" name="BookAppointment" data-provider="specialties" finished-at="2022-12-30T16:57:34 GST" duration-ms="76830" status="PASS">
+        <test-method signature="BookAppointment(java.lang.String)[pri:3, instance:productionSmoke.ProductionHomePageLoginUserSmokeSuite@68c9d179]" started-at="2023-01-09T23:00:29 GST" name="BookAppointment" data-provider="specialties" finished-at="2023-01-09T23:01:09 GST" duration-ms="40534" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -323,441 +72,58 @@ at java.base/java.lang.Thread.run(Thread.java:833)
               </value>
             </param>
           </params>
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[Cannot invoke "String.equals(Object)" because "doctorName" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "String.equals(Object)" because "doctorName" is null
+at productionSmoke.ProductionHomePageLoginUserSmokeSuite.BookAppointment(ProductionHomePageLoginUserSmokeSuite.java:292)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:808)
+at org.testng.TestRunner.run(TestRunner.java:603)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
+at org.testng.SuiteRunner.access$000(SuiteRunner.java:32)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:467)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:833)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BookAppointment -->
-        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:productionSmoke.ProductionHomePageGuestUserSmokeSuite@69c81773]" started-at="2022-12-30T16:57:34 GST" name="getResult" finished-at="2022-12-30T16:57:34 GST" duration-ms="24" status="PASS">
+        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:productionSmoke.ProductionHomePageLoginUserSmokeSuite@68c9d179]" started-at="2023-01-09T23:01:10 GST" name="getResult" finished-at="2023-01-09T23:01:10 GST" duration-ms="53" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=BookAppointment status=SUCCESS method=ProductionHomePageGuestUserSmokeSuite.BookAppointment(java.lang.String)[pri:6, instance:productionSmoke.ProductionHomePageGuestUserSmokeSuite@69c81773] output={null}]]]>
+                <![CDATA[[TestResult name=BookAppointment status=FAILURE method=ProductionHomePageLoginUserSmokeSuite.BookAppointment(java.lang.String)[pri:3, instance:productionSmoke.ProductionHomePageLoginUserSmokeSuite@68c9d179] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getResult -->
-        <test-method signature="VerifySearchValues(java.lang.String)[pri:7, instance:productionSmoke.ProductionHomePageGuestUserSmokeSuite@69c81773]" started-at="2022-12-30T16:57:34 GST" name="VerifySearchValues" data-provider="searchValues" finished-at="2022-12-30T16:58:02 GST" duration-ms="28013" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Udaya]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- VerifySearchValues -->
-        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:productionSmoke.ProductionHomePageGuestUserSmokeSuite@69c81773]" started-at="2022-12-30T16:58:02 GST" name="getResult" finished-at="2022-12-30T16:58:02 GST" duration-ms="30" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=VerifySearchValues status=SUCCESS method=ProductionHomePageGuestUserSmokeSuite.VerifySearchValues(java.lang.String)[pri:7, instance:productionSmoke.ProductionHomePageGuestUserSmokeSuite@69c81773] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getResult -->
-        <test-method signature="VerifySearchValues(java.lang.String)[pri:7, instance:productionSmoke.ProductionHomePageGuestUserSmokeSuite@69c81773]" started-at="2022-12-30T16:58:02 GST" name="VerifySearchValues" data-provider="searchValues" finished-at="2022-12-30T16:58:24 GST" duration-ms="21901" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Udan]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- VerifySearchValues -->
-        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:productionSmoke.ProductionHomePageGuestUserSmokeSuite@69c81773]" started-at="2022-12-30T16:58:24 GST" name="getResult" finished-at="2022-12-30T16:58:24 GST" duration-ms="31" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=VerifySearchValues status=SUCCESS method=ProductionHomePageGuestUserSmokeSuite.VerifySearchValues(java.lang.String)[pri:7, instance:productionSmoke.ProductionHomePageGuestUserSmokeSuite@69c81773] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getResult -->
-        <test-method signature="VerifySearchValues(java.lang.String)[pri:7, instance:productionSmoke.ProductionHomePageGuestUserSmokeSuite@69c81773]" started-at="2022-12-30T16:58:24 GST" name="VerifySearchValues" data-provider="searchValues" finished-at="2022-12-30T16:59:22 GST" duration-ms="58291" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Pana]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- VerifySearchValues -->
-        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:productionSmoke.ProductionHomePageGuestUserSmokeSuite@69c81773]" started-at="2022-12-30T16:59:22 GST" name="getResult" finished-at="2022-12-30T16:59:22 GST" duration-ms="75" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=VerifySearchValues status=SUCCESS method=ProductionHomePageGuestUserSmokeSuite.VerifySearchValues(java.lang.String)[pri:7, instance:productionSmoke.ProductionHomePageGuestUserSmokeSuite@69c81773] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getResult -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:productionSmoke.ProductionHomePageGuestUserSmokeSuite@69c81773]" started-at="2022-12-30T16:59:22 GST" name="tearDown" finished-at="2022-12-30T16:59:23 GST" duration-ms="1286" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:productionSmoke.ProductionHomePageLoginUserSmokeSuite@68c9d179]" started-at="2023-01-09T23:01:10 GST" name="tearDown" finished-at="2023-01-09T23:01:11 GST" duration-ms="1051" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- productionSmoke.ProductionHomePageGuestUserSmokeSuite -->
-      <class name="productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite">
-        <test-method is-config="true" signature="setupTest()[pri:0, instance:productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite@60f00693]" started-at="2022-12-30T16:32:47 GST" name="setupTest" finished-at="2022-12-30T16:32:54 GST" duration-ms="7021" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setupTest -->
-        <test-method signature="VerifyHomepagelist(java.lang.String)[pri:1, instance:productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite@60f00693]" started-at="2022-12-30T16:32:54 GST" name="VerifyHomepagelist" data-provider="PharmacyPage" finished-at="2022-12-30T16:33:13 GST" duration-ms="18646" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Popular Categories]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- VerifyHomepagelist -->
-        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite@60f00693]" started-at="2022-12-30T16:33:13 GST" name="getResult" finished-at="2022-12-30T16:33:13 GST" duration-ms="77" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=VerifyHomepagelist status=SUCCESS method=ProductionPharmacyPageGuestUserSmokeSuite.VerifyHomepagelist(java.lang.String)[pri:1, instance:productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite@60f00693] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getResult -->
-        <test-method signature="VerifyHomepagelist(java.lang.String)[pri:1, instance:productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite@60f00693]" started-at="2022-12-30T16:33:13 GST" name="VerifyHomepagelist" data-provider="PharmacyPage" finished-at="2022-12-30T16:33:31 GST" duration-ms="18560" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Shop By Brands]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- VerifyHomepagelist -->
-        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite@60f00693]" started-at="2022-12-30T16:33:31 GST" name="getResult" finished-at="2022-12-30T16:33:31 GST" duration-ms="38" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=VerifyHomepagelist status=SUCCESS method=ProductionPharmacyPageGuestUserSmokeSuite.VerifyHomepagelist(java.lang.String)[pri:1, instance:productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite@60f00693] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getResult -->
-        <test-method signature="VerifyHomepagelist(java.lang.String)[pri:1, instance:productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite@60f00693]" started-at="2022-12-30T16:33:31 GST" name="VerifyHomepagelist" data-provider="PharmacyPage" finished-at="2022-12-30T16:33:50 GST" duration-ms="18660" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Top Deals For You]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- VerifyHomepagelist -->
-        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite@60f00693]" started-at="2022-12-30T16:33:50 GST" name="getResult" finished-at="2022-12-30T16:33:50 GST" duration-ms="21" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=VerifyHomepagelist status=SUCCESS method=ProductionPharmacyPageGuestUserSmokeSuite.VerifyHomepagelist(java.lang.String)[pri:1, instance:productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite@60f00693] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getResult -->
-        <test-method signature="VerifyHomepagelist(java.lang.String)[pri:1, instance:productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite@60f00693]" started-at="2022-12-30T16:33:50 GST" name="VerifyHomepagelist" data-provider="PharmacyPage" finished-at="2022-12-30T16:34:09 GST" duration-ms="18578" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[New Arrivals]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- VerifyHomepagelist -->
-        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite@60f00693]" started-at="2022-12-30T16:34:09 GST" name="getResult" finished-at="2022-12-30T16:34:09 GST" duration-ms="35" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=VerifyHomepagelist status=SUCCESS method=ProductionPharmacyPageGuestUserSmokeSuite.VerifyHomepagelist(java.lang.String)[pri:1, instance:productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite@60f00693] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getResult -->
-        <test-method signature="VerifyHomepagelist(java.lang.String)[pri:1, instance:productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite@60f00693]" started-at="2022-12-30T16:34:09 GST" name="VerifyHomepagelist" data-provider="PharmacyPage" finished-at="2022-12-30T16:34:27 GST" duration-ms="18553" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Featured Categories]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- VerifyHomepagelist -->
-        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite@60f00693]" started-at="2022-12-30T16:34:27 GST" name="getResult" finished-at="2022-12-30T16:34:27 GST" duration-ms="20" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=VerifyHomepagelist status=SUCCESS method=ProductionPharmacyPageGuestUserSmokeSuite.VerifyHomepagelist(java.lang.String)[pri:1, instance:productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite@60f00693] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getResult -->
-        <test-method signature="VerifyHomepagelist(java.lang.String)[pri:1, instance:productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite@60f00693]" started-at="2022-12-30T16:34:27 GST" name="VerifyHomepagelist" data-provider="PharmacyPage" finished-at="2022-12-30T16:34:46 GST" duration-ms="18556" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Essential Products]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- VerifyHomepagelist -->
-        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite@60f00693]" started-at="2022-12-30T16:34:46 GST" name="getResult" finished-at="2022-12-30T16:34:46 GST" duration-ms="29" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=VerifyHomepagelist status=SUCCESS method=ProductionPharmacyPageGuestUserSmokeSuite.VerifyHomepagelist(java.lang.String)[pri:1, instance:productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite@60f00693] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getResult -->
-        <test-method signature="VerifyPopularCategories()[pri:2, instance:productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite@60f00693]" started-at="2022-12-30T16:34:46 GST" name="VerifyPopularCategories" finished-at="2022-12-30T16:35:14 GST" duration-ms="27808" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- VerifyPopularCategories -->
-        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite@60f00693]" started-at="2022-12-30T16:35:14 GST" name="getResult" finished-at="2022-12-30T16:35:14 GST" duration-ms="20" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=VerifyPopularCategories status=SUCCESS method=ProductionPharmacyPageGuestUserSmokeSuite.VerifyPopularCategories()[pri:2, instance:productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite@60f00693] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getResult -->
-        <test-method signature="VerifyAddandRemoveProducttoCart(java.lang.String)[pri:3, instance:productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite@60f00693]" started-at="2022-12-30T16:35:29 GST" name="VerifyAddandRemoveProducttoCart" data-provider="PharmacyPageCategory" finished-at="2022-12-30T16:39:23 GST" duration-ms="234157" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Top Deals For You]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- VerifyAddandRemoveProducttoCart -->
-        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite@60f00693]" started-at="2022-12-30T16:39:23 GST" name="getResult" finished-at="2022-12-30T16:39:23 GST" duration-ms="34" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=VerifyAddandRemoveProducttoCart status=SUCCESS method=ProductionPharmacyPageGuestUserSmokeSuite.VerifyAddandRemoveProducttoCart(java.lang.String)[pri:3, instance:productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite@60f00693] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getResult -->
-        <test-method signature="VerifyAddandRemoveProducttoCart(java.lang.String)[pri:3, instance:productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite@60f00693]" started-at="2022-12-30T16:39:23 GST" name="VerifyAddandRemoveProducttoCart" data-provider="PharmacyPageCategory" finished-at="2022-12-30T16:39:48 GST" duration-ms="24592" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[New Arrivals]]>
-              </value>
-            </param>
-          </params>
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//h2[text()='New Arrivals']/following-sibling::a[text()='View All']"}
-  (Session info: chrome=108.0.5359.125)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'CHQ-L-5ZSFLN3', ip: '192.168.0.141', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.125, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\SRIVID~1.MER\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:64156}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: c065d3b73b5776876f236c8f4562f156
-*** Element info: {Using=xpath, value=//h2[text()='New Arrivals']/following-sibling::a[text()='View All']}]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//h2[text()='New Arrivals']/following-sibling::a[text()='View All']"}
-  (Session info: chrome=108.0.5359.125)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'CHQ-L-5ZSFLN3', ip: '192.168.0.141', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.125, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\SRIVID~1.MER\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:64156}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: c065d3b73b5776876f236c8f4562f156
-*** Element info: {Using=xpath, value=//h2[text()='New Arrivals']/following-sibling::a[text()='View All']}
-at jdk.internal.reflect.GeneratedConstructorAccessor20.newInstance(Unknown Source)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-at pageObjects.Aster.HomePage.ClickonViewAll(HomePage.java:90)
-at productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite.VerifyAddandRemoveProducttoCart(ProductionPharmacyPageGuestUserSmokeSuite.java:136)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:808)
-at org.testng.TestRunner.run(TestRunner.java:603)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
-at org.testng.SuiteRunner.access$000(SuiteRunner.java:32)
-at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:467)
-at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
-at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-at java.base/java.lang.Thread.run(Thread.java:833)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- VerifyAddandRemoveProducttoCart -->
-        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite@60f00693]" started-at="2022-12-30T16:39:48 GST" name="getResult" finished-at="2022-12-30T16:39:48 GST" duration-ms="46" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=VerifyAddandRemoveProducttoCart status=FAILURE method=ProductionPharmacyPageGuestUserSmokeSuite.VerifyAddandRemoveProducttoCart(java.lang.String)[pri:3, instance:productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite@60f00693] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getResult -->
-        <test-method signature="VerifyAddandRemoveProducttoCart(java.lang.String)[pri:3, instance:productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite@60f00693]" started-at="2022-12-30T16:39:48 GST" name="VerifyAddandRemoveProducttoCart" data-provider="PharmacyPageCategory" finished-at="2022-12-30T16:40:37 GST" duration-ms="49061" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Essential Products]]>
-              </value>
-            </param>
-          </params>
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='cartBox']//div[@class='badge']"}
-  (Session info: chrome=108.0.5359.125)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'CHQ-L-5ZSFLN3', ip: '192.168.0.141', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.125, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\SRIVID~1.MER\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:64156}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: c065d3b73b5776876f236c8f4562f156
-*** Element info: {Using=xpath, value=//div[@class='cartBox']//div[@class='badge']}]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='cartBox']//div[@class='badge']"}
-  (Session info: chrome=108.0.5359.125)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'CHQ-L-5ZSFLN3', ip: '192.168.0.141', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.125, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\SRIVID~1.MER\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:64156}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: c065d3b73b5776876f236c8f4562f156
-*** Element info: {Using=xpath, value=//div[@class='cartBox']//div[@class='badge']}
-at jdk.internal.reflect.GeneratedConstructorAccessor20.newInstance(Unknown Source)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at jdk.proxy2/jdk.proxy2.$Proxy17.isDisplayed(Unknown Source)
-at pageObjects.Aster.CommonHomePharmacy.cartitemscountvalidation(CommonHomePharmacy.java:394)
-at productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite.VerifyAddandRemoveProducttoCart(ProductionPharmacyPageGuestUserSmokeSuite.java:141)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:808)
-at org.testng.TestRunner.run(TestRunner.java:603)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
-at org.testng.SuiteRunner.access$000(SuiteRunner.java:32)
-at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:467)
-at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
-at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-at java.base/java.lang.Thread.run(Thread.java:833)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- VerifyAddandRemoveProducttoCart -->
-        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite@60f00693]" started-at="2022-12-30T16:40:38 GST" name="getResult" finished-at="2022-12-30T16:40:38 GST" duration-ms="27" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=VerifyAddandRemoveProducttoCart status=FAILURE method=ProductionPharmacyPageGuestUserSmokeSuite.VerifyAddandRemoveProducttoCart(java.lang.String)[pri:3, instance:productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite@60f00693] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getResult -->
-      </class> <!-- productionSmoke.ProductionPharmacyPageGuestUserSmokeSuite -->
+      </class> <!-- productionSmoke.ProductionHomePageLoginUserSmokeSuite -->
     </test> <!-- Smoke Login Page -->
   </suite> <!-- Smoke Tests Suite - User -->
 </testng-results>

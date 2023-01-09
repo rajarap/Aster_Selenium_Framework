@@ -55,6 +55,27 @@ public class CommonHomeDoctor {
 	@FindBy(xpath = "(//div[@class='slotWrapper']//div[@class='slots']//div[contains(@class,'slot')])[1]")
 	private WebElement slottime;
 
+	@FindBy(xpath = "//button[text()='Complete Profile']")
+	private WebElement CompleteProfile;
+
+	@FindBy(xpath = "//button[text()='Book Appointment']")
+	private WebElement BookAppointment;
+
+	@FindBy(xpath = "//label[text()='Pay at Clinic']/preceding-sibling::input[@class='form-check-input']")
+	private WebElement PayAtClinic;
+
+	// button[@type='submit']
+	@FindBy(xpath = "//button[@type='submit']")
+	private WebElement Confirm;
+
+	@FindBy(xpath = "//div[text()='Booking Number:']/following-sibling::div")
+	private WebElement BookingID;
+	
+	@FindBy(xpath = "//div[text()='Consultation Fee']/following::div[@class='fw-bold']")
+	private WebElement consultationFee;
+
+	//div[text()='Consultation Fee']/following::div[@class='fw-bold']
+
 	public CommonHomeDoctor(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -365,10 +386,9 @@ public class CommonHomeDoctor {
 		}
 
 	}
-	
-	public void clickontimeslot() throws InterruptedException
-	{
-		
+
+	public void clickontimeslot() throws InterruptedException {
+
 		try {
 			Thread.sleep(6000);
 			WaitUtils.waitForDocumentReadyState(driver);
@@ -376,10 +396,126 @@ public class CommonHomeDoctor {
 
 			WaitUtils.isElementDisplayed(slottime, driver);
 			WebElementUtils.mouseClick(slottime, driver);
-			
+
 		} catch (org.openqa.selenium.NoSuchElementException e) {
-			
+
 		}
 	}
+
+	public boolean VerifyCompleteProfile() throws InterruptedException {
+		boolean val = false;
+		try {
+
+			Thread.sleep(6000);
+			WaitUtils.waitForDocumentReadyState(driver);
+			CompleteProfile.isDisplayed();
+			val = true;
+			return val;
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+			return val;
+		}
+	}
+
+	public void clickonBookAppointment() throws InterruptedException {
+
+		try {
+
+			Thread.sleep(6000);
+			WaitUtils.waitForDocumentReadyState(driver);
+			WaitUtils.isElementDisplayed(BookAppointment, driver);
+			WebElementUtils.mouseClick(BookAppointment, driver);
+
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+
+		}
+	}
+
+	public void selectPayAtClinic() throws InterruptedException {
+
+		try {
+
+			Thread.sleep(6000);
+			WaitUtils.waitForDocumentReadyState(driver);
+			WaitUtils.isElementDisplayed(PayAtClinic, driver);
+			WebElementUtils.mouseClick(PayAtClinic, driver);
+
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+
+		}
+	}
+
+	public void clickonconfirm() throws InterruptedException {
+
+		try {
+
+			Thread.sleep(6000);
+			WaitUtils.waitForDocumentReadyState(driver);
+			WaitUtils.isElementDisplayed(Confirm, driver);
+			WebElementUtils.mouseClick(Confirm, driver);
+
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+
+		}
+	}
+
+	public String getBookingID() throws InterruptedException {
+		String Val = "";
+		try {
+			Thread.sleep(6000);
+			WaitUtils.isElementDisplayed(BookingID, driver);
+			String bookingId = BookingID.getText();
+			Val = bookingId;
+			return Val;
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+			return Val;
+		}
+
+	}
+	public String getConsultationfee() throws InterruptedException {
+		String Val = "";
+		try {
+			Thread.sleep(6000);
+			WaitUtils.isElementDisplayed(consultationFee, driver);
+			String bookingId = consultationFee.getText();
+			Val = bookingId;
+			return Val;
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+			return Val;
+		}
+
+	}
+	public boolean ClickonAddTolistIcon(int i) throws InterruptedException {
+		try {
+			Thread.sleep(6000);
+			WaitUtils.waitForDocumentReadyState(driver);
+			WebElement ele = driver.findElement(By.xpath("//div[@class='actionBlock']//input[contains(@class, 'form-check-input')][" + i + "]"));
+			WaitUtils.isElementDisplayed(ele, driver);
+			if (ele.isEnabled())
+				ele.click();
+				
+			return true;
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+			return false;
+
+		}
+
+	}
+	
+	public String getListsDoctorsName(int i) throws InterruptedException {
+		String val = null;
+		try {
+			Thread.sleep(6000);
+			WaitUtils.waitForDocumentReadyState(driver);
+			WebElement ele = driver.findElement(By.xpath("//div[@class='name cursor-pointer'][" + i + "]"));
+			WaitUtils.isElementDisplayed(ele, driver);
+			String doctorName = ele.getText();
+			val = doctorName;
+			return val;
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+			return val;
+		}
+
+	}
+
 
 }

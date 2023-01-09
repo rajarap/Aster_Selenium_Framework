@@ -28,7 +28,12 @@ public class LoginPage {
 	    
 	    @FindBy(xpath = "//input[@id='password']")
 	    private WebElement passwordTextBox;
-	 
+	    
+	    @FindBy(xpath = " //span[@class='user-name']")
+	    private WebElement userName;
+	  
+	    @FindBy(xpath="//button[text()='Login/Register']")
+	    private WebElement loginPharmacy;
 	    
 	    public LoginPage(WebDriver driver) {
 	        this.driver = driver;
@@ -73,7 +78,7 @@ public class LoginPage {
 	    }
 
          
- 	    public boolean ClickOnContinueButton_1() throws InterruptedException {
+ 	    public boolean ClickOnContinueButton_email() throws InterruptedException {
  	    	
  	    	Thread.sleep(6000);
  	    	WaitUtils.waitForDocumentReadyState(driver);
@@ -109,7 +114,7 @@ public class LoginPage {
 	    	 
 	    }
  	  
- 	 public boolean ClickOnContinueButton_2() throws InterruptedException {
+ 	 public boolean ClickOnContinueButton_password() throws InterruptedException {
 	    	
 	    	Thread.sleep(6000);
 	    	WaitUtils.waitForDocumentReadyState(driver);
@@ -120,6 +125,45 @@ public class LoginPage {
 	    	
 	    	 
 	    }
+ 	 
+		public String getUserName() throws InterruptedException {
+			String Val = "";
+			try {
+				Thread.sleep(6000);
+				WaitUtils.waitForDocumentReadyState(driver);
+				WaitUtils.isElementDisplayed(userName, driver);
+				String user_name = userName.getText();
+				Val = user_name;
+				return Val;
+
+			} catch (org.openqa.selenium.NoSuchElementException e) {
+				return Val;
+			}
+
+		}
+		
+		public boolean VerifyLoginRegisteratPharmacy() throws InterruptedException {
+			String Val = "";
+			try {
+				Thread.sleep(6000);
+				WaitUtils.waitForDocumentReadyState(driver);
+				loginPharmacy.isDisplayed();
+				//WaitUtils.isElementDisplayed(loginPharmacy, driver);
+				return true;
+
+			} catch (org.openqa.selenium.NoSuchElementException e) {
+				return false;
+			}
+
+		}
+		 public void ClickOnLoginPharmacy() throws InterruptedException {
+		    	
+		    	Thread.sleep(6000);
+		    	WaitUtils.waitForDocumentReadyState(driver);
+		    	 WaitUtils.isElementDisplayed(loginPharmacy, driver);
+		    	 WebElementUtils.mouseClick(loginPharmacy, driver);
+			 
+		    }
 
 
 }
