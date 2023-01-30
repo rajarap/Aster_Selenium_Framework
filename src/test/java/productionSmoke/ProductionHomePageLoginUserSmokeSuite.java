@@ -393,7 +393,16 @@ public class ProductionHomePageLoginUserSmokeSuite extends BaseTestUser {
 		}
 
 	}
+	
+	@Test( priority = 5)
+	public void AddFamilyMember(String Specialty) throws InterruptedException {
+		test = rep.createTest("verifyAddFamilyMember ");
+		test.log(Status.INFO, "Verfiy Add Family Member ");
+		boolean flag = false;
+		homepage.ClickonMainLogo();
+		
 
+	}
 	@AfterMethod(alwaysRun = true)
 	public void getResult(ITestResult result) {
 		if (result.getStatus() == ITestResult.FAILURE) {

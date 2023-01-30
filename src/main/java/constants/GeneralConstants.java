@@ -8,12 +8,16 @@ public class GeneralConstants {
     //Info Section HomePage
     public static String Pharmacy = "Popular Categories in Pharmacy";
     public static String specialities = "Doctors By Specialities";
+    
     public static String clinicsnearbyyou = "Near You";
     public static String brands = "Shop By Brands";
     public static String cartpage = "My Cart Details";
 
   //Info Section Pharmacypage
     public static String Pharmacycategory = "Popular Categories";
+    
+    public static String Categories_bestseller = "Bestseller Of The Month";
+    public static String Categories_TopDeals = "Top Deals for You";
     //DateTime patterns
     public static String DATE_FORMAT_PATTERN="yyyyMMdd";
     public static String TIME_FORMAT_PATTERN="HH-mm-ss";

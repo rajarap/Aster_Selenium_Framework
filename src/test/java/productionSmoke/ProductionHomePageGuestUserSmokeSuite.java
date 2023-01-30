@@ -121,7 +121,7 @@ public class ProductionHomePageGuestUserSmokeSuite extends BaseTestUser {
 		try {
 			test = rep.createTest("VerifyTopSpecialties " + specialities);
 			test.log(Status.INFO, "Verify Top Specialties" + specialities);
-			homepage.ClickonMainLogo();
+			//homepage.ClickonMainLogo();
 			if (homepage.VerifyHomepageFields(specialities)) {
 
 				homepage.ClickonViewAll(specialities);

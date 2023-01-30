@@ -97,6 +97,7 @@ public class HomePage {
 	public boolean VerifyHomepageFields(String fieldValue) throws InterruptedException {
 		try {
 			Thread.sleep(6000);
+			Thread.sleep(6000);
 			WebElement ele = driver.findElement(By.xpath("//h2[text()='" + fieldValue + "']"));
 
 			WaitUtils.waitForDocumentReadyState(driver);

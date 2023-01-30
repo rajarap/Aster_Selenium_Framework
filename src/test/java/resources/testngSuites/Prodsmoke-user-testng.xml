@@ -1,18 +1,20 @@
-<?xml version = "1.0" encoding = "UTF-8"?>
-<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-
-<suite name="Smoke Tests Suite - User" parallel = "tests">
-    <listeners>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="false">
+ <listeners>
         <listener class-name="testUtils.ListenersUtil"></listener>
     </listeners>
     <parameter name="pipeline" value="true"></parameter>
     <parameter name="testUser" value="PIPELINE"></parameter>
-    <test name="Smoke Login Page">
-        <classes>
-            
-                  <class name="productionSmoke.ProductionHomePageLoginUserSmokeSuite">
-               </class>
-        </classes>
-    </test>
-    
+	<test name="Test" parallel="false" preserve-order="true" verbose="2">
+		<classes>
+				 <class name="productionSmoke.NewUserBasicRegistration"></class>
+			 	 <class name="productionSmoke.LoginwithRegisteredUser"></class>
+			 	  <class name="productionSmoke.AddInsurance"></class>
+			 	   <class name="productionSmoke.ManagePayment"></class>
+			    <class name="productionSmoke.PharmacyOrderPlaced"></class>
+			
+			
+		</classes>
+	</test>
 </suite>

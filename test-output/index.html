@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -40,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Smoke_Tests_Suite___User" class="navigator-link">
-              <span class="suite-name border-failed">Smoke Tests Suite - User</span>
+              <span class="suite-name border-passed">Smoke Tests Suite - User</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -93,21 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">3 methods, 1 failed,   2 passed</span>
-                  </li>
-                  <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-Smoke_Tests_Suite___User" class="hide-methods failed suite-Smoke_Tests_Suite___User"> (hide)</a> <!-- hide-methods failed suite-Smoke_Tests_Suite___User -->
-                      <a href="#" panel-name="suite-Smoke_Tests_Suite___User" class="show-methods failed suite-Smoke_Tests_Suite___User"> (show)</a> <!-- show-methods failed suite-Smoke_Tests_Suite___User -->
-                    </span>
-                    <div class="method-list-content failed suite-Smoke_Tests_Suite___User">
-                      <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Smoke_Tests_Suite___User" title="productionSmoke.ProductionHomePageLoginUserSmokeSuite" class="method navigator-link" hash-for-method="BookAppointment(General Medicine)">BookAppointment(General Medicine)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content failed suite-Smoke_Tests_Suite___User -->
+                    <span class="method-stats">2 methods,   2 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -118,12 +104,12 @@
                     <div class="method-list-content passed suite-Smoke_Tests_Suite___User">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Smoke_Tests_Suite___User" title="productionSmoke.ProductionHomePageLoginUserSmokeSuite" class="method navigator-link" hash-for-method="VerifyLoginWithEmail">VerifyLoginWithEmail</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Smoke_Tests_Suite___User" title="productionSmoke.ManagePayment" class="method navigator-link" hash-for-method="ManagePayment">ManagePayment</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Smoke_Tests_Suite___User" title="productionSmoke.ProductionHomePageLoginUserSmokeSuite" class="method navigator-link" hash-for-method="VerifyOrderPlacedwithCashorCardOnDelivery(Top Deals For You)">VerifyOrderPlacedwithCashorCardOnDelivery(Top Deals For You)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Smoke_Tests_Suite___User" title="productionSmoke.ManagePayment" class="method navigator-link" hash-for-method="VerifyLoginWithEmail">VerifyLoginWithEmail</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Smoke_Tests_Suite___User -->
@@ -138,50 +124,24 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Smoke_Tests_Suite___User" class="panel Smoke_Tests_Suite___User">
-          <div class="suite-Smoke_Tests_Suite___User-class-failed">
+          <div class="suite-Smoke_Tests_Suite___User-class-passed">
             <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">productionSmoke.ProductionHomePageLoginUserSmokeSuite</span>
+              <img src="passed.png"/>
+              <span class="class-name">productionSmoke.ManagePayment</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="BookAppointment(General Medicine)">
-                  </a> <!-- BookAppointment(General Medicine) -->
-                  <span class="method-name">BookAppointment</span>
-                  <span class="parameters">(General Medicine)</span>
-                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;String.equals(Object)&quot; because &quot;doctorName&quot; is null
-	at productionSmoke.ProductionHomePageLoginUserSmokeSuite.BookAppointment(ProductionHomePageLoginUserSmokeSuite.java:292)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-... Removed 18 stack frames
-</div> <!-- stack-trace -->
+                  <a name="ManagePayment">
+                  </a> <!-- ManagePayment -->
+                  <span class="method-name">ManagePayment</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Smoke_Tests_Suite___User-class-failed -->
-          <div class="suite-Smoke_Tests_Suite___User-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">productionSmoke.ProductionHomePageLoginUserSmokeSuite</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
                   <a name="VerifyLoginWithEmail">
                   </a> <!-- VerifyLoginWithEmail -->
                   <span class="method-name">VerifyLoginWithEmail</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="VerifyOrderPlacedwithCashorCardOnDelivery(Top Deals For You)">
-                  </a> <!-- VerifyOrderPlacedwithCashorCardOnDelivery(Top Deals For You) -->
-                  <span class="method-name">VerifyOrderPlacedwithCashorCardOnDelivery</span>
-                  <span class="parameters">(Top Deals For You)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -203,7 +163,7 @@
   &lt;/listeners&gt;
   &lt;test thread-count=&quot;5&quot; parallel=&quot;tests&quot; name=&quot;Smoke Login Page&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;productionSmoke.ProductionHomePageLoginUserSmokeSuite&quot;/&gt;
+      &lt;class name=&quot;productionSmoke.ManagePayment&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Smoke Login Page --&gt;
 &lt;/suite&gt; &lt;!-- Smoke Tests Suite - User --&gt;
@@ -243,24 +203,20 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(3);
+data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'VerifyOrderPlacedwithCashorCardOnDelivery')
-data.setCell(0, 2, 'productionSmoke.ProductionHomePageLoginUserSmokeSuite')
-data.setCell(0, 3, 278161);
+data.setCell(0, 1, 'ManagePayment')
+data.setCell(0, 2, 'productionSmoke.ManagePayment')
+data.setCell(0, 3, 81078);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'VerifyLoginWithEmail')
-data.setCell(1, 2, 'productionSmoke.ProductionHomePageLoginUserSmokeSuite')
-data.setCell(1, 3, 86697);
-data.setCell(2, 0, 2)
-data.setCell(2, 1, 'BookAppointment')
-data.setCell(2, 2, 'productionSmoke.ProductionHomePageLoginUserSmokeSuite')
-data.setCell(2, 3, 40534);
+data.setCell(1, 2, 'productionSmoke.ManagePayment')
+data.setCell(1, 3, 74311);
 window.suiteTableData['Smoke_Tests_Suite___User']= { tableData: data, tableDiv: 'times-div-Smoke_Tests_Suite___User'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 7 minutes</span>
+              <span class="suite-total-time">Total running time: 2 minutes</span>
               <div id="times-div-Smoke_Tests_Suite___User">
               </div> <!-- times-div-Smoke_Tests_Suite___User -->
             </div> <!-- times-div -->
@@ -286,44 +242,34 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">productionSmoke.ProductionHomePageLoginUserSmokeSuite</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">productionSmoke.ManagePayment</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
                 <span class="method-name">getPingIdToken(true, PIPELINE)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
               <div class="configuration-class before">
                 <span class="method-name">setupTest</span>
-                <span class="method-start">18 ms</span>
+                <span class="method-start">26 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">VerifyLoginWithEmail</span>
-                <span class="method-start">24034 ms</span>
+                <span class="method-start">7638 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">getResult([TestResult name=VerifyLoginWithEmail status=SUCCESS method=ProductionHomePageLoginUserSmokeSuite.Ve...)</span>
-                <span class="method-start">110736 ms</span>
+                <span class="method-name">getResult([TestResult name=VerifyLoginWithEmail status=SUCCESS method=ManagePayment.VerifyLoginWithEmail()[pri...)</span>
+                <span class="method-start">81952 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
-                <span class="method-name">VerifyOrderPlacedwithCashorCardOnDelivery(Top Deals For You)</span>
-                <span class="method-start">111220 ms</span>
+                <span class="method-name">ManagePayment</span>
+                <span class="method-start">82335 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">getResult([TestResult name=VerifyOrderPlacedwithCashorCardOnDelivery status=SUCCESS method=ProductionHomePageL...)</span>
-                <span class="method-start">389382 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">BookAppointment(General Medicine)</span>
-                <span class="method-start">389416 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">getResult([TestResult name=BookAppointment status=FAILURE method=ProductionHomePageLoginUserSmokeSuite.BookApp...)</span>
-                <span class="method-start">430222 ms</span>
+                <span class="method-name">getResult([TestResult name=ManagePayment status=SUCCESS method=ManagePayment.ManagePayment()[pri:2, instance:p...)</span>
+                <span class="method-start">163414 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-test after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">430276 ms</span>
+                <span class="method-start">163454 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

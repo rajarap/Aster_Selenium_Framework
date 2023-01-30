@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="2" failed="1" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-01-09T22:53:59 GST" name="Smoke Tests Suite - User" finished-at="2023-01-09T23:01:11 GST" duration-ms="431330">
+  <suite started-at="2023-01-26T22:42:27 GST" name="Smoke Tests Suite - User" finished-at="2023-01-26T22:45:11 GST" duration-ms="163915">
     <groups>
     </groups>
-    <test started-at="2023-01-09T22:53:59 GST" name="Smoke Login Page" finished-at="2023-01-09T23:01:11 GST" duration-ms="431330">
-      <class name="productionSmoke.ProductionHomePageLoginUserSmokeSuite">
-        <test-method is-config="true" signature="getPingIdToken(java.lang.String,java.lang.String)[pri:0, instance:productionSmoke.ProductionHomePageLoginUserSmokeSuite@68c9d179]" started-at="2023-01-09T22:53:59 GST" name="getPingIdToken" finished-at="2023-01-09T22:53:59 GST" duration-ms="8" status="PASS">
+    <test started-at="2023-01-26T22:42:27 GST" name="Smoke Login Page" finished-at="2023-01-26T22:45:11 GST" duration-ms="163915">
+      <class name="productionSmoke.ManagePayment">
+        <test-method is-config="true" signature="getPingIdToken(java.lang.String,java.lang.String)[pri:0, instance:productionSmoke.ManagePayment@2dfaea86]" started-at="2023-01-26T22:42:27 GST" name="getPingIdToken" finished-at="2023-01-26T22:42:27 GST" duration-ms="14" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -23,107 +23,45 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getPingIdToken -->
-        <test-method is-config="true" signature="setupTest()[pri:0, instance:productionSmoke.ProductionHomePageLoginUserSmokeSuite@68c9d179]" started-at="2023-01-09T22:53:59 GST" name="setupTest" finished-at="2023-01-09T22:54:23 GST" duration-ms="24006" status="PASS">
+        <test-method is-config="true" signature="setupTest()[pri:0, instance:productionSmoke.ManagePayment@2dfaea86]" started-at="2023-01-26T22:42:27 GST" name="setupTest" finished-at="2023-01-26T22:42:35 GST" duration-ms="7606" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupTest -->
-        <test-method signature="VerifyLoginWithEmail()[pri:1, instance:productionSmoke.ProductionHomePageLoginUserSmokeSuite@68c9d179]" started-at="2023-01-09T22:54:23 GST" name="VerifyLoginWithEmail" finished-at="2023-01-09T22:55:50 GST" duration-ms="86697" status="PASS">
+        <test-method signature="VerifyLoginWithEmail()[pri:1, instance:productionSmoke.ManagePayment@2dfaea86]" started-at="2023-01-26T22:42:35 GST" name="VerifyLoginWithEmail" finished-at="2023-01-26T22:43:49 GST" duration-ms="74311" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VerifyLoginWithEmail -->
-        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:productionSmoke.ProductionHomePageLoginUserSmokeSuite@68c9d179]" started-at="2023-01-09T22:55:50 GST" name="getResult" finished-at="2023-01-09T22:55:51 GST" duration-ms="472" status="PASS">
+        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:productionSmoke.ManagePayment@2dfaea86]" started-at="2023-01-26T22:43:49 GST" name="getResult" finished-at="2023-01-26T22:43:50 GST" duration-ms="381" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=VerifyLoginWithEmail status=SUCCESS method=ProductionHomePageLoginUserSmokeSuite.VerifyLoginWithEmail()[pri:1, instance:productionSmoke.ProductionHomePageLoginUserSmokeSuite@68c9d179] output={null}]]]>
+                <![CDATA[[TestResult name=VerifyLoginWithEmail status=SUCCESS method=ManagePayment.VerifyLoginWithEmail()[pri:1, instance:productionSmoke.ManagePayment@2dfaea86] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getResult -->
-        <test-method signature="VerifyOrderPlacedwithCashorCardOnDelivery(java.lang.String)[pri:2, instance:productionSmoke.ProductionHomePageLoginUserSmokeSuite@68c9d179]" started-at="2023-01-09T22:55:51 GST" name="VerifyOrderPlacedwithCashorCardOnDelivery" data-provider="PharmacyPageCategory" finished-at="2023-01-09T23:00:29 GST" duration-ms="278161" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Top Deals For You]]>
-              </value>
-            </param>
-          </params>
+        <test-method signature="ManagePayment()[pri:2, instance:productionSmoke.ManagePayment@2dfaea86]" started-at="2023-01-26T22:43:50 GST" name="ManagePayment" finished-at="2023-01-26T22:45:11 GST" duration-ms="81078" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- VerifyOrderPlacedwithCashorCardOnDelivery -->
-        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:productionSmoke.ProductionHomePageLoginUserSmokeSuite@68c9d179]" started-at="2023-01-09T23:00:29 GST" name="getResult" finished-at="2023-01-09T23:00:29 GST" duration-ms="33" status="PASS">
+        </test-method> <!-- ManagePayment -->
+        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:productionSmoke.ManagePayment@2dfaea86]" started-at="2023-01-26T22:45:11 GST" name="getResult" finished-at="2023-01-26T22:45:11 GST" duration-ms="39" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=VerifyOrderPlacedwithCashorCardOnDelivery status=SUCCESS method=ProductionHomePageLoginUserSmokeSuite.VerifyOrderPlacedwithCashorCardOnDelivery(java.lang.String)[pri:2, instance:productionSmoke.ProductionHomePageLoginUserSmokeSuite@68c9d179] output={null}]]]>
+                <![CDATA[[TestResult name=ManagePayment status=SUCCESS method=ManagePayment.ManagePayment()[pri:2, instance:productionSmoke.ManagePayment@2dfaea86] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getResult -->
-        <test-method signature="BookAppointment(java.lang.String)[pri:3, instance:productionSmoke.ProductionHomePageLoginUserSmokeSuite@68c9d179]" started-at="2023-01-09T23:00:29 GST" name="BookAppointment" data-provider="specialties" finished-at="2023-01-09T23:01:09 GST" duration-ms="40534" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[General Medicine]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.NullPointerException">
-            <message>
-              <![CDATA[Cannot invoke "String.equals(Object)" because "doctorName" is null]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "String.equals(Object)" because "doctorName" is null
-at productionSmoke.ProductionHomePageLoginUserSmokeSuite.BookAppointment(ProductionHomePageLoginUserSmokeSuite.java:292)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:808)
-at org.testng.TestRunner.run(TestRunner.java:603)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
-at org.testng.SuiteRunner.access$000(SuiteRunner.java:32)
-at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:467)
-at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
-at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-at java.base/java.lang.Thread.run(Thread.java:833)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- BookAppointment -->
-        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:productionSmoke.ProductionHomePageLoginUserSmokeSuite@68c9d179]" started-at="2023-01-09T23:01:10 GST" name="getResult" finished-at="2023-01-09T23:01:10 GST" duration-ms="53" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=BookAppointment status=FAILURE method=ProductionHomePageLoginUserSmokeSuite.BookAppointment(java.lang.String)[pri:3, instance:productionSmoke.ProductionHomePageLoginUserSmokeSuite@68c9d179] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getResult -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:productionSmoke.ProductionHomePageLoginUserSmokeSuite@68c9d179]" started-at="2023-01-09T23:01:10 GST" name="tearDown" finished-at="2023-01-09T23:01:11 GST" duration-ms="1051" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:productionSmoke.ManagePayment@2dfaea86]" started-at="2023-01-26T22:45:11 GST" name="tearDown" finished-at="2023-01-26T22:45:11 GST" duration-ms="457" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- productionSmoke.ProductionHomePageLoginUserSmokeSuite -->
+      </class> <!-- productionSmoke.ManagePayment -->
     </test> <!-- Smoke Login Page -->
   </suite> <!-- Smoke Tests Suite - User -->
 </testng-results>

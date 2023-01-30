@@ -8,7 +8,7 @@ public class AsterWebAutomation {
 	 @DataProvider(name = "HomePage")
 	    public static Object[] getHomepageListValues() {
 	       // Object[] arrObj = DataProviderUtils.getExcelData("./AsterWebAutomation.xlsx", "HomePage");
-	    	return new Object [] { "Popular Categories in Pharmacy","Doctors By Specialities","Bestseller Of The Month","Trending Pharmacy Categories","Near You","Shop By Brands"}; 
+	    	return new Object [] { "Popular Categories in Pharmacy","Doctors By Specialities","Top Deals for You","Trending Pharmacy Categories","Near You","Shop By Brands"}; 
 	    			//;
 	    }
 	 @DataProvider(name = "searchValues")
@@ -28,7 +28,7 @@ public class AsterWebAutomation {
 	 @DataProvider(name = "specialties")
 	    public static Object[] specialtyName() {
 	       // Object[] arrObj = DataProviderUtils.getExcelData("./AsterWebAutomation.xlsx", "HomePage");
-	    	return new Object [] { "General Medicine"}; 
+	    	return new Object [] {"General Medicine"}; 
 	    			//;
 	    }
 	 
