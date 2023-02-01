@@ -55,6 +55,9 @@ public class CommonHomeDoctor {
 	@FindBy(xpath = "(//div[@class='slotWrapper']//div[@class='slots']//div[contains(@class,'slot')])[1]")
 	private WebElement slottime;
 
+	@FindBy(xpath = "(//div[@class='slotWrapper']//div[@class='slots']//div[contains(@class,'slot')])[2]")
+	private WebElement slottime_2;
+
 	@FindBy(xpath = "//button[text()='Complete Profile']")
 	private WebElement CompleteProfile;
 
@@ -70,11 +73,17 @@ public class CommonHomeDoctor {
 
 	@FindBy(xpath = "//div[text()='Booking Number:']/following-sibling::div")
 	private WebElement BookingID;
-	
+
 	@FindBy(xpath = "//div[text()='Consultation Fee']/following::div[@class='fw-bold']")
 	private WebElement consultationFee;
 
-	//div[text()='Consultation Fee']/following::div[@class='fw-bold']
+	@FindBy(xpath = "//button[contains(text(), 'Check Appointment Details')]")
+	private WebElement checkAppointmentDetailsButton;
+
+	@FindBy(xpath = "//button[contains(text(), 'Confirm Appointment')]")
+	private WebElement confirmAppointment;
+
+	// div[text()='Consultation Fee']/following::div[@class='fw-bold']
 
 	public CommonHomeDoctor(WebDriver driver) {
 		this.driver = driver;
@@ -471,6 +480,7 @@ public class CommonHomeDoctor {
 		}
 
 	}
+
 	public String getConsultationfee() throws InterruptedException {
 		String Val = "";
 		try {
@@ -484,15 +494,17 @@ public class CommonHomeDoctor {
 		}
 
 	}
+
 	public boolean ClickonAddTolistIcon(int i) throws InterruptedException {
 		try {
 			Thread.sleep(6000);
 			WaitUtils.waitForDocumentReadyState(driver);
-			WebElement ele = driver.findElement(By.xpath("//div[@class='actionBlock']//input[contains(@class, 'form-check-input')][" + i + "]"));
+			WebElement ele = driver.findElement(
+					By.xpath("//div[@class='actionBlock']//input[contains(@class, 'form-check-input')][" + i + "]"));
 			WaitUtils.isElementDisplayed(ele, driver);
 			if (ele.isEnabled())
 				ele.click();
-				
+
 			return true;
 		} catch (org.openqa.selenium.NoSuchElementException e) {
 			return false;
@@ -500,7 +512,7 @@ public class CommonHomeDoctor {
 		}
 
 	}
-	
+
 	public String getListsDoctorsName(int i) throws InterruptedException {
 		String val = null;
 		try {
@@ -517,5 +529,72 @@ public class CommonHomeDoctor {
 
 	}
 
+	public String clickOnCheckAppointmentDetailsButton() throws InterruptedException {
+		String val = checkAppointmentDetailsButton.getText();
+		try {
+			Thread.sleep(6000);
+			WaitUtils.waitForDocumentReadyState(driver);
+			if (checkAppointmentDetailsButton.isDisplayed()) {
+				WebElementUtils.mouseClick(checkAppointmentDetailsButton, driver);
+			}
+			return val;
+		} catch (org.openqa.selenium.NoSuchElementException e) {
 
+		}
+		return null;
+	}
+
+	public String clickOnConfirmAppointmentButton() throws InterruptedException {
+		String val = confirmAppointment.getText();
+		try {
+			Thread.sleep(6000);
+			WaitUtils.waitForDocumentReadyState(driver);
+			if (confirmAppointment.isDisplayed()) {
+				WebElementUtils.mouseClick(confirmAppointment, driver);
+			}
+			return val;
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+
+		}
+		return null;
+	}
+	public String getSlottimeslot_2() throws InterruptedException {
+		String val = null;
+		try {
+			Thread.sleep(6000);
+			WaitUtils.waitForDocumentReadyState(driver);
+			// WaitUtils.isElementDisplayed(AsterClinics, driver);
+
+			WaitUtils.isElementDisplayed(slottime_2, driver);
+			String slot = slottime_2.getText();
+			val = slot;
+			return val;
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+			return val;
+		}
+
+	}
+	public void clickontimeslot_2() throws InterruptedException {
+
+		try {
+			Thread.sleep(6000);
+			WaitUtils.waitForDocumentReadyState(driver);
+			// WaitUtils.isElementDisplayed(AsterClinics, driver);
+
+			WaitUtils.isElementDisplayed(slottime_2, driver);
+			WebElementUtils.mouseClick(slottime_2, driver);
+
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+
+		}
+	}
+	public List<WebElement> getDoctorsBySpecialities() throws InterruptedException {
+		Thread.sleep(3000);
+		WaitUtils.waitForDocumentReadyState(driver);
+		WaitUtils.isElementDisplayed(AllSpecialties, driver);
+		List<WebElement> specialtieslist = driver
+				.findElements(By.xpath("//div[@class='specialty-item-wrapper']//div[@class='item']"));
+		return specialtieslist;
+
+	}
 }

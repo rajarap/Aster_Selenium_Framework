@@ -8,10 +8,7 @@
     <parameter name="testUser" value="PIPELINE"></parameter>
 	<test name="Test" parallel="false" preserve-order="true" verbose="2">
 		<classes>
-				 <class name="productionSmoke.NewUserBasicRegistration"></class>
-			 	 <class name="productionSmoke.LoginwithRegisteredUser"></class>
-			 	  <class name="productionSmoke.AddInsurance"></class>
-			 	   <class name="productionSmoke.ManagePayment"></class>
+			
 			    <class name="productionSmoke.PharmacyOrderPlaced"></class>
 			
 			

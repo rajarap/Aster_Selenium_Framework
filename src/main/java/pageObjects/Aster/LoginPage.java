@@ -22,7 +22,7 @@ public class LoginPage {
 	    @FindBy(xpath = "//label[text()='Email Address']")
 	    private WebElement emailAddressLabel;
 	    
-	    @FindBy(xpath = "//input[@id='username']")
+	    @FindBy(xpath = "//input[@placeholder='name@companyname.com']")
 	    private WebElement emailAddressTextBox;
 	    
 	    @FindBy(xpath = "//*[contains(@class,'continue')]")

@@ -113,6 +113,102 @@ public class MenuPage {
 	
 	@FindBy(xpath = "//button[text()='Remove']")
 	private WebElement Payment_RemoveICONpopup;
+	
+	@FindBy(xpath = "//li[@id='mouseTarget6']//div[text()='Manage Address']")
+	private WebElement Menu_ManageAddress;
+	
+	@FindBy(xpath = "//button[@class='addNewButton  btn btn-primary btn-md']")
+	private WebElement addAddressButton;
+	
+	@FindBy(xpath = "//button[@class='lnkAddNew  btn btn-link']")
+	private WebElement addNewButton;
+	
+	@FindBy(xpath="//input[contains(@name, 'searchLocation')]")
+	private WebElement searchLocationTextBox;
+	
+	@FindBy(xpath="//button[@class='btn-close']")
+	private WebElement closeOption;
+	
+	@FindBy(xpath="//div[@class='gm-style']")
+	private WebElement map;
+	
+	@FindBy(xpath = "//button[text()='Confirm Location']")
+	private WebElement confirmLocationButton;
+	
+	@FindBy(xpath = "//input[contains(@name, 'buildingName')]")
+	private WebElement enterBuildingNameTextBox;
+	
+	@FindBy(xpath = "//input[contains(@name, 'flatNumber')]")
+	private WebElement enterFlatorVillaNameTextBox;
+	
+	@FindBy(xpath = "//input[contains(@name, 'addressType')][@value='Home']")
+	private WebElement radioButton_AddressTypeHome;
+	
+	@FindBy(xpath = "//input[contains(@name, 'primary')]")
+	private WebElement checkBox_PrimaryAddress;
+	
+	@FindBy(xpath = "//button[@class='w-100 mx-auto py-3 btn btn-primary btn-sm']")
+	private WebElement saveUpdateAddressDetailsButton;
+	
+	@FindBy(xpath = "//div[@class='address']")
+	private WebElement address;
+	
+	@FindBy(xpath = "//button[@class='button  btn btn-primary 2345 btn-sm']")
+	private WebElement editAddressIcon;
+	
+	@FindBy(xpath = "//div[@class='ButtonBaseStyled-sc-geagcp-0 gShOFA ms-3']")
+	private WebElement removeAddressIcon;
+	
+	@FindBy(xpath = "//button[@class='false false order-2 btn btn-danger']")
+	private WebElement removeButton;
+	
+	@FindBy(xpath = "//div[contains(text(), 'Appointments')]")
+	private WebElement Menu_Appointments;
+	
+	@FindBy(xpath = "//div[@class='d-flex']")
+	private WebElement upcomingAppointmentDoctorInfo;
+	
+	@FindBy(xpath = "//button[contains(text(), 'Reschedule')]")
+	private WebElement rescheduleButton;
+	
+	@FindBy(xpath = "//button[contains(text(), 'Yes, Proceed')]")
+	private WebElement yesProceedButton;
+	
+	@FindBy(xpath = "//button[contains(text(), 'Cancel')]")
+	private WebElement cancelButton;
+	
+	@FindBy(xpath = "//input[@class='form-check-input'][@value='Booked appointment by mistake']")
+	private WebElement reasonforCancellation_RadioButton;
+	
+	@FindBy(xpath = "//button[contains(text(), 'Cancel Appointment')]")
+	private WebElement cancelAppointmentButton;
+	
+	@FindBy(xpath = "//div[@class='status cancelled ']")
+	private WebElement cancelledStatus;
+	
+	@FindBy(xpath = "//div[@class='status confirmed ']")
+	private WebElement confirmedStatus;
+	
+	@FindBy(xpath = "//li[@id='mouseTarget3']//div[text()='Lists']")
+	private WebElement menuLists;
+	
+	@FindBy(xpath="//button[contains(text(), 'My Doctors')] ")
+	private WebElement myDoctorsTab;
+	
+	@FindBy(xpath="//button[text()='Remove']")
+	private WebElement removeButtonMyDoctors;
+	
+	@FindBy(xpath="//button[contains(text(), 'Shopping List')] ")
+	private WebElement shoppingListTab;
+	
+	@FindBy(xpath="//button[@class='btnRemove  btn btn-link btn-sm']")
+	private WebElement removeButtonFromShoppingList;
+	
+	@FindBy(xpath="//p[text()='Hey, there is nothing here']")
+	private WebElement thereIsNothingHereText;
+	
+	@FindBy(xpath="//p[text()='No Doctors Found']")
+	private WebElement noDoctorsFoundText;
 
 	public MenuPage(WebDriver driver) {
 		this.driver = driver;
@@ -129,17 +225,21 @@ public class MenuPage {
 	 * @return
 	 * @throws InterruptedException
 	 */
-	public void ClickonMenu() throws InterruptedException {
+	public String ClickonMenu() throws InterruptedException {
 		try {
 			Thread.sleep(6000);
-
 			WaitUtils.waitForDocumentReadyState(driver);
-			WaitUtils.isElementDisplayed(Menu, driver);
-			WebElementUtils.mouseClick(Menu, driver);
+			String val = Menu.getText();
+			if (Menu.isDisplayed()) {
+				WebElementUtils.mouseClick(Menu, driver);
+			}
+
+			return val;
 
 		} catch (org.openqa.selenium.NoSuchElementException e) {
 
 		}
+		return null;
 	}
 
 	public void ClickonInsurance() throws InterruptedException {
@@ -455,5 +555,482 @@ public class MenuPage {
 			return true;
 		}
 	}
+	
+	public String clickOnMenuManageAddresss() throws InterruptedException {
+		String val = Menu_ManageAddress.getText();
+		try {
+			Thread.sleep(6000);
+			WaitUtils.waitForDocumentReadyState(driver);
+			if (Menu_ManageAddress.isDisplayed()) {
+				WebElementUtils.mouseClick(Menu_ManageAddress, driver);
+			}
+			return val;
+		} catch (org.openqa.selenium.NoSuchElementException e) {
 
-}
+		}
+		return null;
+	}
+	
+	public boolean clickOnAddAddressButton() throws InterruptedException {
+		
+		try {
+			Thread.sleep(6000);
+			WaitUtils.waitForDocumentReadyState(driver);
+			if (addAddressButton.isDisplayed()) {
+				WebElementUtils.mouseClick(addAddressButton, driver);
+			}
+			
+			return true;
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+
+		}
+		return false;
+	}
+	
+	public boolean clickOnAddNewButton() throws InterruptedException {
+		
+		try {
+			Thread.sleep(6000);
+			WaitUtils.waitForDocumentReadyState(driver);
+			if (addNewButton.isDisplayed()) {
+				WebElementUtils.mouseClick(addNewButton, driver);
+			}
+			return true;
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+
+		}
+		return false;
+	}
+	
+    public boolean clickOnSearchLocationTextBox() throws InterruptedException {
+	    	
+	    	Thread.sleep(6000);
+	    	WaitUtils.waitForDocumentReadyState(driver);
+	    	 WaitUtils.isElementDisplayed(searchLocationTextBox, driver);
+	    	 searchLocationTextBox.sendKeys("Al Mankhool");
+			return true;
+	}
+	 
+		
+      public boolean clickOnCloseOption() throws InterruptedException {
+			
+			try {
+				Thread.sleep(6000);
+				WaitUtils.waitForDocumentReadyState(driver);
+				if (closeOption.isDisplayed()) {
+					WebElementUtils.mouseClick(closeOption, driver);
+				}
+				return true;
+			} catch (org.openqa.selenium.NoSuchElementException e) {
+
+			}
+			return false;
+		}
+      
+      public boolean clickOnMap() throws InterruptedException {
+			
+			try {
+				Thread.sleep(6000);
+				WaitUtils.waitForDocumentReadyState(driver);
+				if (map.isDisplayed()) {
+					WebElementUtils.mouseClick(map, driver);
+				}
+				return true;
+			} catch (org.openqa.selenium.NoSuchElementException e) {
+
+			}
+			return false;
+		}
+	
+	public String clickOnConfirmLocationButton() throws InterruptedException {
+		String val = confirmLocationButton.getText();
+		try {
+			Thread.sleep(6000);
+			WaitUtils.waitForDocumentReadyState(driver);
+			if (confirmLocationButton.isDisplayed()) {
+				WebElementUtils.mouseClick(confirmLocationButton, driver);
+			}
+			return val;
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+
+		}
+		return null;
+	}
+	
+	  public boolean clickOnBuildingNameTextBox() throws InterruptedException {
+	    	
+	    	Thread.sleep(6000);
+	    	WaitUtils.waitForDocumentReadyState(driver);
+	    	 WaitUtils.isElementDisplayed(enterBuildingNameTextBox, driver);
+	    	 enterBuildingNameTextBox.sendKeys("Moonlight");
+			return true;
+	}
+	  
+	  public boolean clickOnFlatOrVillaTextBox() throws InterruptedException {
+	    	
+	    	Thread.sleep(6000);
+	    	WaitUtils.waitForDocumentReadyState(driver);
+	    	 WaitUtils.isElementDisplayed(enterFlatorVillaNameTextBox, driver);
+	    	 enterFlatorVillaNameTextBox.sendKeys("15B/9");
+			return true;
+	}
+	  
+	   public boolean clickOnHomeAddressTypeRadioButton() throws InterruptedException {
+			
+			try {
+				Thread.sleep(6000);
+				WaitUtils.waitForDocumentReadyState(driver);
+				if (radioButton_AddressTypeHome.isDisplayed()) {
+					WebElementUtils.mouseClick(radioButton_AddressTypeHome, driver);
+				}
+				return true;
+			} catch (org.openqa.selenium.NoSuchElementException e) {
+
+			}
+			return false;
+		}
+	   
+	   public boolean clickOnPrimaryAddressCheckBox() throws InterruptedException {
+			
+			try {
+				Thread.sleep(6000);
+				WaitUtils.waitForDocumentReadyState(driver);
+				if (checkBox_PrimaryAddress.isDisplayed()) {
+					WebElementUtils.mouseClick(checkBox_PrimaryAddress, driver);
+				}
+				return true;
+			} catch (org.openqa.selenium.NoSuchElementException e) {
+
+			}
+			return false;
+		}
+	   
+	   public String clickOnSaveUpdateAddressDetailsButton() throws InterruptedException {
+			String val = saveUpdateAddressDetailsButton.getText();
+			try {
+				Thread.sleep(6000);
+				WaitUtils.waitForDocumentReadyState(driver);
+				if (saveUpdateAddressDetailsButton.isDisplayed()) {
+					WebElementUtils.mouseClick(saveUpdateAddressDetailsButton, driver);
+				}
+				return val;
+			} catch (org.openqa.selenium.NoSuchElementException e) {
+
+			}
+			return null;
+		}
+	   
+	   public String verifyAddress() throws InterruptedException {
+			String val = address.getText();
+			try {
+				Thread.sleep(6000);
+				WaitUtils.waitForDocumentReadyState(driver);
+				if (address.isDisplayed()) {
+					WebElementUtils.mouseClick(address, driver);
+				}
+				return val;
+			} catch (org.openqa.selenium.NoSuchElementException e) {
+
+			}
+			return null;
+		}
+	   
+	   public boolean clickOnEditAddressIcon() throws InterruptedException {
+			
+			try {
+				Thread.sleep(6000);
+				WaitUtils.waitForDocumentReadyState(driver);
+				if (editAddressIcon.isDisplayed()) {
+					WebElementUtils.mouseClick(editAddressIcon, driver);
+				}
+				return true;
+			} catch (org.openqa.selenium.NoSuchElementException e) {
+
+			}
+			return false;
+		}
+	   
+	   public String clickOnRemoveAddressIcon() throws InterruptedException {
+		
+			try {
+				Thread.sleep(6000);
+				WaitUtils.waitForDocumentReadyState(driver);
+				if (removeAddressIcon.isDisplayed()) {
+					WebElementUtils.mouseClick(removeAddressIcon, driver);
+				}
+				
+			} catch (org.openqa.selenium.NoSuchElementException e) {
+
+			}
+			return null;
+		}
+	   
+	   public boolean clickOnRemoveButton() throws InterruptedException {
+			
+			try {
+				Thread.sleep(6000);
+				WaitUtils.waitForDocumentReadyState(driver);
+				if (removeButton.isDisplayed()) {
+					WebElementUtils.mouseClick(removeButton, driver);
+				}
+				return true;
+			} catch (org.openqa.selenium.NoSuchElementException e) {
+
+			}
+			return false;
+		}
+	   
+	   public String clickOnMenuAppointments() throws InterruptedException {
+			String val = Menu_Appointments.getText();
+			try {
+				Thread.sleep(6000);
+				WaitUtils.waitForDocumentReadyState(driver);
+				if (Menu_Appointments.isDisplayed()) {
+					WebElementUtils.mouseClick(Menu_Appointments, driver);
+				}
+				return val;
+			} catch (org.openqa.selenium.NoSuchElementException e) {
+
+			}
+			return null;
+		}
+	   
+	   public String clickOnUpcomingAppointmentDoctorInfo() throws InterruptedException {
+			 String val = upcomingAppointmentDoctorInfo.getText();
+			 try {
+				Thread.sleep(6000);
+				WaitUtils.waitForDocumentReadyState(driver);
+				if (upcomingAppointmentDoctorInfo.isDisplayed()) {
+					WebElementUtils.mouseClick(upcomingAppointmentDoctorInfo, driver);
+				}
+					return val;
+				} catch (org.openqa.selenium.NoSuchElementException e) {
+
+				}
+				return null;
+				}
+		 
+
+     public String clickOnRescheduleButton() throws InterruptedException {
+	       String val = rescheduleButton.getText();
+	       try {
+		       Thread.sleep(6000);
+		       WaitUtils.waitForDocumentReadyState(driver);
+		       if (rescheduleButton.isDisplayed()) {
+			       WebElementUtils.mouseClick(rescheduleButton, driver);
+		       }
+			       return val;
+		       } catch (org.openqa.selenium.NoSuchElementException e) {
+
+		       }
+		       return null;
+		       }
+     
+     public String clickOnYesProceedButton() throws InterruptedException {
+	       String val = yesProceedButton.getText();
+	       try {
+		       Thread.sleep(6000);
+		       WaitUtils.waitForDocumentReadyState(driver);
+		       if (yesProceedButton.isDisplayed()) {
+			       WebElementUtils.mouseClick(yesProceedButton, driver);
+		       }
+			       return val;
+		       } catch (org.openqa.selenium.NoSuchElementException e) {
+
+		       }
+		       return null;
+		       }
+     
+
+     public String clickOnCancelButton() throws InterruptedException {
+	       String val = cancelButton.getText();
+	       try {
+		       Thread.sleep(6000);
+		       WaitUtils.waitForDocumentReadyState(driver);
+		       if (cancelButton.isDisplayed()) {
+			       WebElementUtils.mouseClick(cancelButton, driver);
+		       }
+			       return val;
+		       } catch (org.openqa.selenium.NoSuchElementException e) {
+
+		       }
+		       return null;
+		       }
+     
+     public boolean clickOnReasonforCancellationRadioButton() throws InterruptedException {
+			
+			try {
+				Thread.sleep(6000);
+				WaitUtils.waitForDocumentReadyState(driver);
+				if (reasonforCancellation_RadioButton.isDisplayed()) {
+					WebElementUtils.mouseClick(reasonforCancellation_RadioButton, driver);
+				}
+				return true;
+			} catch (org.openqa.selenium.NoSuchElementException e) {
+
+			}
+			return false;
+		    }
+     
+     public String clickOnCancelAppointmentButton() throws InterruptedException {
+	       String val = cancelAppointmentButton.getText();
+	       try {
+		       Thread.sleep(6000);
+		       WaitUtils.waitForDocumentReadyState(driver);
+		       if (cancelAppointmentButton.isDisplayed()) {
+			       WebElementUtils.mouseClick(cancelAppointmentButton, driver);
+		       }
+			       return val;
+		       } catch (org.openqa.selenium.NoSuchElementException e) {
+
+		       }
+		       return null;
+		       }
+     
+ 	   public String getCancelledStatus() throws InterruptedException {
+		    String Val = "";
+		    try {
+			Thread.sleep(6000);
+			WaitUtils.waitForDocumentReadyState(driver);
+			WaitUtils.isElementDisplayed(cancelledStatus, driver);
+			String cancelled_status = cancelledStatus.getText();
+			Val = cancelled_status;
+			return Val;
+
+		    } catch (org.openqa.selenium.NoSuchElementException e) {
+			  return Val;
+		    }
+
+	      }
+ 	  
+ 	   public String getConfirmedStatus() throws InterruptedException {
+		    String Val = "";
+		    try {
+			Thread.sleep(6000);
+			WaitUtils.waitForDocumentReadyState(driver);
+			WaitUtils.isElementDisplayed(confirmedStatus, driver);
+			String confirmed_Status = confirmedStatus.getText();
+			Val = confirmed_Status;
+			return Val;
+
+		    } catch (org.openqa.selenium.NoSuchElementException e) {
+			  return Val;
+		    }
+
+	      }
+ 	   
+ 	  public String clickOnMenuLists() throws InterruptedException {
+ 			try {
+ 				Thread.sleep(6000);
+ 				WaitUtils.waitForDocumentReadyState(driver);
+ 				if (menuLists.isDisplayed()) {
+ 					WebElementUtils.mouseClick(menuLists, driver);
+ 				}
+ 				String val = menuLists.getText();
+ 				return val;
+ 			} catch (org.openqa.selenium.NoSuchElementException e) {
+
+ 			}
+ 			return null;
+ 		}
+ 	  
+ 	 public String clickOnMyDoctorsTab() throws InterruptedException
+    	{
+    		try {
+    			Thread.sleep(6000);
+    			WaitUtils.waitForDocumentReadyState(driver);
+    			if(myDoctorsTab.isDisplayed())
+    			{
+    				WebElementUtils.mouseClick(myDoctorsTab, driver);
+    			}
+    			String val = myDoctorsTab.getText();
+ 			return val;
+    	    } catch (org.openqa.selenium.NoSuchElementException e) {
+    	       
+    	    }
+ 		return null;
+    	}
+ 	 
+ 	 public boolean clickOnRemoveButtonMyDoctors() throws InterruptedException {
+			
+			try {
+				Thread.sleep(6000);
+				WaitUtils.waitForDocumentReadyState(driver);
+				if (removeButtonMyDoctors.isDisplayed()) {
+					WebElementUtils.mouseClick(removeButtonMyDoctors, driver);
+				}
+				return true;
+			} catch (org.openqa.selenium.NoSuchElementException e) {
+
+			}
+			return false;
+		}
+ 	 
+ 	public String clickOnShoppingListTab() throws InterruptedException
+   	{
+   		try {
+   			Thread.sleep(6000);
+   			WaitUtils.waitForDocumentReadyState(driver);
+   			if(shoppingListTab.isDisplayed())
+   			{
+   				WebElementUtils.mouseClick(shoppingListTab, driver);
+   			}
+   			String val = shoppingListTab.getText();
+			return val;
+   	    } catch (org.openqa.selenium.NoSuchElementException e) {
+   	       
+   	    }
+		return null;
+   	}
+ 	
+	public boolean clickOnRemoveButtonFromShoppingList() throws InterruptedException
+   	{
+   		try {
+   			Thread.sleep(6000);
+   			WaitUtils.waitForDocumentReadyState(driver);
+   			if(removeButtonFromShoppingList.isDisplayed())
+   			{
+   				WebElementUtils.mouseClick(removeButtonFromShoppingList, driver);
+   			}
+   		
+			return true;
+   	    } catch (org.openqa.selenium.NoSuchElementException e) {
+   	       
+   	    }
+		return false;
+   	}
+	
+	public String VerifyThereIsNothingHereText() throws InterruptedException {
+		try {
+			Thread.sleep(6000);
+			WaitUtils.waitForDocumentReadyState(driver);
+		
+			WaitUtils.isElementDisplayed(thereIsNothingHereText, driver);
+			String val = thereIsNothingHereText.getText();
+			return val;
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+			return null;
+
+		}
+
+	}
+	
+	public String VerifyNoDoctorsFoundText() throws InterruptedException {
+		try {
+			Thread.sleep(6000);
+			WaitUtils.waitForDocumentReadyState(driver);
+		
+			WaitUtils.isElementDisplayed(noDoctorsFoundText, driver);
+			String val = noDoctorsFoundText.getText();
+			return val;
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+			return null;
+
+		}
+
+	}
+     
+     
+   }
+
+

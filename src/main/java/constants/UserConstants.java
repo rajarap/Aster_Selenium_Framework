@@ -17,4 +17,6 @@ public class UserConstants {
 	 public static String ExpiryYear2="8";
 	 public static String CVV="123";
 	 public static String NameonThecard="Automation";
+	 public static String DoctorName= "Dr. Abdul Qadar Syed";
+	 public static String CategoryTitle= "Blood Pressure Monitors";
 }

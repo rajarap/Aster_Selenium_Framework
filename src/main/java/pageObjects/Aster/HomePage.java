@@ -27,6 +27,9 @@ public class HomePage {
 
 	@FindBy(xpath = "//div[contains(@class,'searchBox')]//input[@type='text']")
 	private WebElement globalSearchbox;
+	
+	@FindBy(xpath = "//ul[@class='react-autosuggest__suggestions-list']")
+	private WebElement searchedResult;
 
 	@FindBy(xpath = "//div[@class='searchMenu']//div[text()='No Results Found']")
 	private WebElement NoResults;
@@ -51,6 +54,7 @@ public class HomePage {
 
 	@FindBy(xpath = "//div[@class='modal-content']//button[text()='Create a new cart']")
 	private WebElement Mergenewcart;
+	
 	@FindBy(xpath = "//div[@class='menuButton']")
 	private WebElement menuButton;
 
@@ -150,15 +154,39 @@ public class HomePage {
 
 				Val = getSearchtext(i);
 				if (Val.contains(SearchVal)) {
-
 					break;
 				}
+				
 			}
 
 		}
 		return Val;
-
 	}
+
+	public boolean GlobalSearchDoctor(String doctorName) throws InterruptedException {
+    	
+    	Thread.sleep(6000);
+    	WaitUtils.waitForDocumentReadyState(driver);
+    	 WaitUtils.isElementDisplayed(globalSearchbox, driver);
+    	 globalSearchbox.sendKeys(doctorName);
+		return true;
+		
+    }
+	
+	public String clickOnGlobalSearchedResult() throws InterruptedException {
+	       String val = searchedResult.getText();
+	       try {
+		       Thread.sleep(6000);
+		       WaitUtils.waitForDocumentReadyState(driver);
+		       if (searchedResult.isDisplayed()) {
+			       WebElementUtils.mouseClick(searchedResult, driver);
+		       }
+			       return val;
+		       } catch (org.openqa.selenium.NoSuchElementException e) {
+
+		       }
+		       return null;
+		       }
 
 	public String getSearchtext(int i) throws InterruptedException {
 

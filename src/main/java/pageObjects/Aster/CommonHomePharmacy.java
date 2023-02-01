@@ -16,6 +16,7 @@ import utils.WebElementUtils;
 
 import java.util.HashMap;
 import java.util.List;
+import static constants.UserConstants.CategoryTitle;
 
 /**
  * Login Page Object class representing the log in page
@@ -663,5 +664,48 @@ public class CommonHomePharmacy {
 		}
 
 	}
+	public String clickOnPharmacyCategory() throws InterruptedException {
+		Thread.sleep(6000);
+	
+		WebElement CategoryName = driver
+				.findElement(By.xpath("//div[@class='brandtitle'][text()='" + CategoryTitle + "']"));
+		WaitUtils.isElementDisplayed(CategoryName, driver);
+		CategoryName.click();
+		return CategoryTitle;
+
+	}
+	public boolean ClickonAddToWishlistIcon(int i) throws InterruptedException {
+		try {
+			Thread.sleep(6000);
+			WaitUtils.waitForDocumentReadyState(driver);
+			WebElement ele = driver.findElement(By.xpath("//div[contains(@class, 'addToWishList ')][" + i + "]"));
+			WaitUtils.isElementDisplayed(ele, driver);
+			if (ele.isEnabled())
+				ele.click();
+				
+			return true;
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+			return false;
+
+		}
+
+	}
+	
+	public String getListsProductsName(int i) throws InterruptedException {
+		String val = null;
+		try {
+			Thread.sleep(6000);
+			WaitUtils.waitForDocumentReadyState(driver);
+			WebElement ele = driver.findElement(By.xpath("//div[contains(@class, 'prodName cursor-pointer')][" + i + "]"));
+			WaitUtils.isElementDisplayed(ele, driver);
+			String productName = ele.getText();
+			val = productName;
+			return val;
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+			return val;
+		}
+
+	}
+	
 
 }

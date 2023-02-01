@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-01-26T22:42:27 GST" name="Smoke Tests Suite - User" finished-at="2023-01-26T22:45:11 GST" duration-ms="163915">
+  <suite started-at="2023-02-01T07:53:36 GST" name="Suite" finished-at="2023-02-01T07:55:28 GST" duration-ms="111197">
     <groups>
     </groups>
-    <test started-at="2023-01-26T22:42:27 GST" name="Smoke Login Page" finished-at="2023-01-26T22:45:11 GST" duration-ms="163915">
-      <class name="productionSmoke.ManagePayment">
-        <test-method is-config="true" signature="getPingIdToken(java.lang.String,java.lang.String)[pri:0, instance:productionSmoke.ManagePayment@2dfaea86]" started-at="2023-01-26T22:42:27 GST" name="getPingIdToken" finished-at="2023-01-26T22:42:27 GST" duration-ms="14" status="PASS">
+    <test started-at="2023-02-01T07:53:36 GST" name="Test" finished-at="2023-02-01T07:55:28 GST" duration-ms="111197">
+      <class name="productionSmoke.PharmacyOrderPlaced">
+        <test-method is-config="true" signature="getPingIdToken(java.lang.String,java.lang.String)[pri:0, instance:productionSmoke.PharmacyOrderPlaced@2dfaea86]" started-at="2023-02-01T07:53:36 GST" name="getPingIdToken" finished-at="2023-02-01T07:53:36 GST" duration-ms="8" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -23,45 +23,30 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getPingIdToken -->
-        <test-method is-config="true" signature="setupTest()[pri:0, instance:productionSmoke.ManagePayment@2dfaea86]" started-at="2023-01-26T22:42:27 GST" name="setupTest" finished-at="2023-01-26T22:42:35 GST" duration-ms="7606" status="PASS">
+        <test-method is-config="true" signature="setupTest()[pri:0, instance:productionSmoke.PharmacyOrderPlaced@2dfaea86]" started-at="2023-02-01T07:53:36 GST" name="setupTest" finished-at="2023-02-01T07:53:45 GST" duration-ms="8331" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupTest -->
-        <test-method signature="VerifyLoginWithEmail()[pri:1, instance:productionSmoke.ManagePayment@2dfaea86]" started-at="2023-01-26T22:42:35 GST" name="VerifyLoginWithEmail" finished-at="2023-01-26T22:43:49 GST" duration-ms="74311" status="PASS">
+        <test-method signature="VerifyOrderPlacedwithBestseller()[pri:1, instance:productionSmoke.PharmacyOrderPlaced@2dfaea86]" started-at="2023-02-01T07:53:45 GST" name="VerifyOrderPlacedwithBestseller" finished-at="2023-02-01T07:55:27 GST" duration-ms="102018" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- VerifyLoginWithEmail -->
-        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:productionSmoke.ManagePayment@2dfaea86]" started-at="2023-01-26T22:43:49 GST" name="getResult" finished-at="2023-01-26T22:43:50 GST" duration-ms="381" status="PASS">
+        </test-method> <!-- VerifyOrderPlacedwithBestseller -->
+        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:productionSmoke.PharmacyOrderPlaced@2dfaea86]" started-at="2023-02-01T07:55:27 GST" name="getResult" finished-at="2023-02-01T07:55:27 GST" duration-ms="379" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=VerifyLoginWithEmail status=SUCCESS method=ManagePayment.VerifyLoginWithEmail()[pri:1, instance:productionSmoke.ManagePayment@2dfaea86] output={null}]]]>
+                <![CDATA[[TestResult name=VerifyOrderPlacedwithBestseller status=SUCCESS method=PharmacyOrderPlaced.VerifyOrderPlacedwithBestseller()[pri:1, instance:productionSmoke.PharmacyOrderPlaced@2dfaea86] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getResult -->
-        <test-method signature="ManagePayment()[pri:2, instance:productionSmoke.ManagePayment@2dfaea86]" started-at="2023-01-26T22:43:50 GST" name="ManagePayment" finished-at="2023-01-26T22:45:11 GST" duration-ms="81078" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ManagePayment -->
-        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:productionSmoke.ManagePayment@2dfaea86]" started-at="2023-01-26T22:45:11 GST" name="getResult" finished-at="2023-01-26T22:45:11 GST" duration-ms="39" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=ManagePayment status=SUCCESS method=ManagePayment.ManagePayment()[pri:2, instance:productionSmoke.ManagePayment@2dfaea86] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getResult -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:productionSmoke.ManagePayment@2dfaea86]" started-at="2023-01-26T22:45:11 GST" name="tearDown" finished-at="2023-01-26T22:45:11 GST" duration-ms="457" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:productionSmoke.PharmacyOrderPlaced@2dfaea86]" started-at="2023-02-01T07:55:27 GST" name="tearDown" finished-at="2023-02-01T07:55:28 GST" duration-ms="431" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- productionSmoke.ManagePayment -->
-    </test> <!-- Smoke Login Page -->
-  </suite> <!-- Smoke Tests Suite - User -->
+      </class> <!-- productionSmoke.PharmacyOrderPlaced -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>
